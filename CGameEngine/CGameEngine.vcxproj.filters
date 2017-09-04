@@ -26,5 +26,8 @@
     <ClInclude Include="src\Engine\Display.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Util\ScopeWatch.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
