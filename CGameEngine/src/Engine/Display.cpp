@@ -1,6 +1,7 @@
 #include "Display.h"
 
-Display::Display(int width, int height, const std::string title) 
+using namespace ENGINE;
+Display::Display(int width, int height, const std::string title)
 	: width(width), height(height)
 {
 	glewExperimental = GL_TRUE;
@@ -49,6 +50,13 @@ Display::Display(int width, int height, const std::string title)
 		}
 
 	}
+}
+
+Display::~Display()
+{
+	SDL_GL_DeleteContext(glContext);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 }
 
 void Display::ClearBuffer()
