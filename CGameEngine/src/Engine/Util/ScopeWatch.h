@@ -13,7 +13,18 @@ namespace ENGINE {
 			///		is called.
 			/// 
 			/// Example Usage: 
-			///		ScopeWatch<Display> watch(display,&Display::SwapBuffer);
+			/// void main(){
+			/// 
+			///		//do stuff here
+			///		Display* display;
+			///		{
+			///			ScopeWatch<Display> watch(display,&Display::Foo);
+			///			//do stuff here
+			///		} //display->Foo() gets called automatically
+			/// 
+			///		// do stuff here
+			/// }
+			///	
 			/// </summary>
 			/// <param name="obj">The object the member function is called on</param>
 			/// <param name="memFun">The member function</param>
