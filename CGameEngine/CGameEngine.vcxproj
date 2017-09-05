@@ -157,10 +157,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Display.cpp" />
+    <ClCompile Include="src\Engine\Mesh.cpp" />
+    <ClCompile Include="src\Engine\Model.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h" />
+    <ClInclude Include="src\Engine\Mesh.h" />
+    <ClInclude Include="src\Engine\Model.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
