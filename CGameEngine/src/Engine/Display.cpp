@@ -68,3 +68,7 @@ void Display::SwapBuffer()
 {
 	SDL_GL_SwapWindow(window);
 }
+
+void Display::SetClearColor(float r, float g, float b) {
+	glClearColor(r, g, b, 1.0f);
+}

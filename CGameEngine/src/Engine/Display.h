@@ -41,6 +41,15 @@ namespace ENGINE {
 		/// </summary>
 		/// <returns>Height of the window</returns>
 		int inline GetHeight() { return height; }
+
+		/// <summary>
+		/// This call sets the clear color of the window to a certain color
+		/// </summary>
+		/// <param name="r">Red part of color (Range 0-1)</param>
+		/// <param name="g">Green part of color (Range 0-1)</param>
+		/// <param name="b">Blue part of color (Range 0-1)</param>
+		void SetClearColor(float r, float g, float b);
+
 	private:
 		//width and height of window
 		int width, height;
