@@ -166,6 +166,9 @@
     <ClInclude Include="src\Engine\Mesh.h" />
     <ClInclude Include="src\Engine\Model.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="TodoList.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

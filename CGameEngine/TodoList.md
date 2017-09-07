@@ -21,3 +21,5 @@
 	 - Window Handler
 	 - Event Handler
 	 - Image Handler
+ - Add Deferred Shading
+   - A method that simulates light and shadow casts
