@@ -29,13 +29,29 @@ You may want to use other IDEs or Compilers; Therefore, add the Dependencies (li
 
  - Write automated tests
  - Add samples for each component of the engine
- - Add shader support
- - Add texture support
- - Add lighting (Deferred shading)
- - Add component based entity system
- - Add scene support
- - Add static models
- - Add animated models
+ - Shader Class
+   - We need a way to load and handle shaders
+   - It would be nice if the shader class can register the uniforms variables by its own
+ - Input Handler
+   - Handle Key and Button inputs
+ - Assets Loader
+   - We need a way to load all kinds of stuff with only one loader 
+   - Lets code a Asset Loader to store and load shaders, textures and models
+ - Component based entity system
+   - A system to handle entities and their components
+ - Scene Handler
+   - We need a way to handle different scenes 
+   - Extract main function into the game project where the scenes are registered and than the main loop is called 
+ - (3D Object MipMapping)
+ - GUI
+   - A way to create a GUI for games
+   - We need: 
+     - Text/Font-Handler
+	 - Window Handler
+	 - Event Handler
+	 - Image Handler
+ - Add Deferred Shading
+   - A method that simulates light and shadow casts
 
 License
 ----
