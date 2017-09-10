@@ -168,8 +168,10 @@
     <ClInclude Include="src\Engine\Mesh.h" />
     <ClInclude Include="src\Engine\Model.h" />
     <ClInclude Include="src\Engine\Shader.h" />
+    <ClInclude Include="src\Engine\Util\AutoUnbind.h" />
     <ClInclude Include="src\Engine\Util\CmpStr.h" />
     <ClInclude Include="src\Engine\Util\FileSystem.h" />
+    <ClInclude Include="src\Engine\Util\ScopeWatch.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Debug\res\shader\diffuseShader.frag" />

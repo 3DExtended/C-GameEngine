@@ -42,9 +42,10 @@ int _tmain(int argc, _TCHAR* argv[]) {
 		display->ClearBuffer();
 
 		//Render game
-		shader->Bind();
+		Bind(shader);
+
 		model->Render();
-		shader->Unbind();
+		
 
 		//swap buffer
 		display->SwapBuffer();

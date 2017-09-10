@@ -49,13 +49,13 @@ Shader::~Shader()
 	glDeleteProgram(programID);
 }
 
-void Shader::Bind()
+void Shader::_bind()
 {
 	//Start using the shader program
 	glUseProgram(programID);
 }
 
-void Shader::Unbind()
+void Shader::_unbind()
 {
 	//stop using shader program
 	glUseProgram(0);

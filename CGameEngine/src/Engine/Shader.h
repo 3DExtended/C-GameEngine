@@ -7,19 +7,21 @@
 #include <sstream>
 #include "Util/CmpStr.h"
 #include "Util/FileSystem.h"
+#include "Util/AutoUnbind.h"
+
 using namespace ENGINE::UTIL;
-class Shader {
+class Shader:public AutoUnbind {
 public:
 	Shader(const std::string path);
 	~Shader();
-	void Bind();
-	void Unbind();
 
 
 	GLint getUniform(std::string name);
 
-
 private:
+	void _bind();
+	void _unbind();
+
 	GLuint programID;
 	std::map<const std::string, GLint, CmpStr> uniforms;
 
