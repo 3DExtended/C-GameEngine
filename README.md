@@ -9,6 +9,10 @@ Following aspects can be learned:
 ## Features:
 
   - Opening a Window and setting its Clear-Color
+  - Shader Class
+    - A way to load and handle shaders
+    - This class registers uniform variables on their own
+    - If the "Bind(shaderObj)" macro is used, the shader is automatically unbind after the scope it was bind to.
 
 # Dependencies
 
@@ -29,9 +33,6 @@ You may want to use other IDEs or Compilers; Therefore, add the Dependencies (li
 
  - Write automated tests
  - Add samples for each component of the engine
- - Shader Class
-   - We need a way to load and handle shaders
-   - It would be nice if the shader class can register the uniforms variables by its own
  - Input Handler
    - Handle Key and Button inputs
  - Assets Loader
@@ -42,16 +43,16 @@ You may want to use other IDEs or Compilers; Therefore, add the Dependencies (li
  - Scene Handler
    - We need a way to handle different scenes 
    - Extract main function into the game project where the scenes are registered and than the main loop is called 
- - (3D Object MipMapping)
  - GUI
    - A way to create a GUI for games
    - We need: 
      - Text/Font-Handler
-	 - Window Handler
-	 - Event Handler
-	 - Image Handler
+   - Window Handler
+   - Event Handler
+   - Image Handler
  - Add Deferred Shading
    - A method that simulates light and shadow casts
+ - (3D Object MipMapping)
 
 License
 ----
