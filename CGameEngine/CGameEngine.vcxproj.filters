@@ -59,5 +59,7 @@
     <None Include="ClassDiagram.cd" />
     <None Include="res\shader\diffuseShader.vert" />
     <None Include="res\shader\diffuseShader.frag" />
+    <None Include="Debug\res\shader\diffuseShader.vert" />
+    <None Include="Debug\res\shader\diffuseShader.frag" />
   </ItemGroup>
 </Project>

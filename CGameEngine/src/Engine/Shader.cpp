@@ -36,6 +36,11 @@ Shader::Shader(const std::string path)
 	//Delete shaders since program is enough information
 	glDeleteShader(vertexID);
 	glDeleteShader(fragID);
+
+	//register uniforms
+	RegisterAllUniforms(vertContent);
+	RegisterAllUniforms(fragContent);
+
 }
 
 Shader::~Shader()
@@ -56,9 +61,28 @@ void Shader::Unbind()
 	glUseProgram(0);
 }
 
+void Shader::RegisterAllUniforms(std::string shaderSource)
+{
+	//search for "unifrom" in source code
+	std::string buf;
+	std::stringstream ss(shaderSource);
+
+	while (ss >> buf) { //read word by word (and remove new line character)
+		if (buf == "uniform") {
+			if (ss >> buf) {	//read type of unifom
+				if (ss >> buf) {	//read name of uniform
+					RegUniform(buf);	//register uniform with that name
+				}
+			}
+		}
+	}
+}
+
 void Shader::RegUniform(const std::string name)
 {
 	//TODO
+
+	//Todo make sure that there is only one uniform per name stored
 }
 
 void Shader::RegUniformArray(const std::string name)
