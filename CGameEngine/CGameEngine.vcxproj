@@ -159,14 +159,22 @@
     <ClCompile Include="src\Engine\Display.cpp" />
     <ClCompile Include="src\Engine\Mesh.cpp" />
     <ClCompile Include="src\Engine\Model.cpp" />
+    <ClCompile Include="src\Engine\Shader.cpp" />
+    <ClCompile Include="src\Engine\Util\FileSystem.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h" />
     <ClInclude Include="src\Engine\Mesh.h" />
     <ClInclude Include="src\Engine\Model.h" />
+    <ClInclude Include="src\Engine\Shader.h" />
+    <ClInclude Include="src\Engine\Util\CmpStr.h" />
+    <ClInclude Include="src\Engine\Util\FileSystem.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="res\shader\diffuseShader.frag" />
+    <None Include="res\shader\diffuseShader.vert" />
     <None Include="TodoList.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -2,8 +2,10 @@
 #include <tchar.h>	//Other entry point for windows
 #include "Engine/Mesh.h"
 #include "Engine/Model.h"
+#include "Engine/Shader.h"
 
 using namespace ENGINE;
+using namespace ENGINE::UTIL;
 
 int _tmain(int argc, _TCHAR* argv[]) {
 	Display* display = new Display(800, 600, "The C++ GameEngine by Peter Esser");
@@ -14,13 +16,16 @@ int _tmain(int argc, _TCHAR* argv[]) {
 	float red = 0;
 
 	Mesh *mesh = new Mesh();
-	mesh->addPoint(glm::vec3(0, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 1, 1, 1));
-	mesh->addPoint(glm::vec3(-1, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 1, 1, 1));
-	mesh->addPoint(glm::vec3(1, -1, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 1, 1, 1));
+	mesh->addPoint(glm::vec3(0, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 0, 0, 1));
+	mesh->addPoint(glm::vec3(-1, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 1, 0, 1));
+	mesh->addPoint(glm::vec3(1, -1, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 0, 1, 1));
 
 	mesh->addTriangle(0, 1, 2);
 
 	Model* model = new Model(mesh);
+
+	//Load Shader
+	Shader* shader = new Shader(FileSystem::resFolderPrefix + "res/shader/diffuseShader");
 
 	//main loop of gameengine
 	while (1) {
@@ -37,7 +42,9 @@ int _tmain(int argc, _TCHAR* argv[]) {
 		display->ClearBuffer();
 
 		//Render game
+		shader->Bind();
 		model->Render();
+		shader->Unbind();
 
 		//swap buffer
 		display->SwapBuffer();

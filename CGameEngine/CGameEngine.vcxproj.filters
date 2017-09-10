@@ -27,6 +27,12 @@
     <ClCompile Include="src\Engine\Model.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Util\FileSystem.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Shader.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">
@@ -38,8 +44,20 @@
     <ClInclude Include="src\Engine\Mesh.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Shader.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\FileSystem.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\CmpStr.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="TodoList.md" />
+    <None Include="ClassDiagram.cd" />
+    <None Include="res\shader\diffuseShader.vert" />
+    <None Include="res\shader\diffuseShader.frag" />
   </ItemGroup>
 </Project>
