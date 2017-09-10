@@ -73,7 +73,12 @@ void Shader::RegisterAllUniforms(std::string shaderSource)
 		if (buf == "uniform") {
 			if (ss >> buf) {	//read type of unifom
 				if (ss >> buf) {	//read name of uniform
-					RegUniform(buf);	//register uniform with that name
+					//TODO check if string contains ";"
+					if (buf.find(';') >= 0)
+						RegUniform(buf.substr(0,buf.size()-1));	//register uniform with that name (remove ";")
+					else
+						RegUniform(buf);	//register uniform with that name 
+
 				}
 			}
 		}
