@@ -1,5 +1,7 @@
 #include "Shader.h"
 
+using namespace ENGINE;
+
 Shader::Shader(const std::string path)
 {
 	std::string vertContent = FileSystem::LoadFile(path + ".vert");
@@ -80,9 +82,12 @@ void Shader::RegisterAllUniforms(std::string shaderSource)
 
 void Shader::RegUniform(const std::string name)
 {
-	//TODO
-
-	//Todo make sure that there is only one uniform per name stored
+	std::map<const std::string, GLint>::iterator it = uniforms.find(name.c_str());
+	
+	if (it == uniforms.end()) {
+		GLint id = glGetUniformLocation(programID, name.c_str());
+		uniforms.insert(std::make_pair(name.c_str(), id));
+	}
 }
 
 void Shader::RegUniformArray(const std::string name)
@@ -92,8 +97,8 @@ void Shader::RegUniformArray(const std::string name)
 
 GLint Shader::getUniform(std::string name)
 {
-	//TODO
-	return GLint();
+	std::map<const std::string, GLint>::iterator it = uniforms.find(name.c_str());
+	return it->second;
 }
 
 GLuint Shader::makeShaderFromSource(std::string source, GLuint shaderType)
