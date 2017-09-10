@@ -16,7 +16,6 @@ namespace ENGINE {
 		Shader(const std::string path);
 		~Shader();
 
-
 		GLint getUniform(std::string name);
 
 	private:
