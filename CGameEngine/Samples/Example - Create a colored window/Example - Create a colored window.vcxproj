@@ -157,11 +157,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Scenes\MainScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CGameEngine.vcxproj">
       <Project>{65d5ee91-5451-4998-86a0-086e4212fb25}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Scenes\MainScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

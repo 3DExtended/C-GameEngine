@@ -17,9 +17,10 @@ namespace ENGINE {
 	class SceneHandler {
 	public:
 		static SceneHandler* getInstance();
+		static void AddScene(Scene* newScene) { getInstance()->AddScene(newScene); }
 		~SceneHandler();
 		void SwitchScene(uint16_t index);
-		void AddScene(Scene* newScene);
+		void _AddScene(Scene* newScene);
 
 	private:
 		static SceneHandler* instance;

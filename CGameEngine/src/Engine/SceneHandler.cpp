@@ -35,7 +35,7 @@ void SceneHandler::SwitchScene(uint16_t index)
 	}
 }
 
-void SceneHandler::AddScene(Scene * newScene)
+void SceneHandler::_AddScene(Scene * newScene)
 {
 	scenes.push_back(newScene);
 }
