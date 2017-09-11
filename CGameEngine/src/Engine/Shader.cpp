@@ -2,6 +2,7 @@
 
 using namespace ENGINE;
 
+
 Shader::Shader(const std::string path)
 {
 	std::string vertContent = FileSystem::LoadFile(path + ".vert");
@@ -43,6 +44,7 @@ Shader::Shader(const std::string path)
 	RegisterAllUniforms(vertContent);
 	RegisterAllUniforms(fragContent);
 
+	allShaders.insert(std::make_pair(path, this));
 }
 
 Shader::~Shader()
@@ -100,9 +102,24 @@ void Shader::RegUniformArray(const std::string name)
 	//TODO
 }
 
+void Shader::dropAllShaders()
+{
+	glUseProgram(0);
+	Shader::allShaders = std::map<const std::string, Shader*, CmpStr>();
+}
+
 GLint Shader::getUniform(std::string name)
 {
 	std::map<const std::string, GLint>::iterator it = uniforms.find(name.c_str());
+	return it->second;
+}
+
+Shader * Shader::getShader(const std::string name)
+{
+	std::map<const std::string, Shader*>::iterator it = Shader::allShaders.find(name);
+	if (it == Shader::allShaders.end()) {
+		std::cerr << "Please register your shaders before using it. Use the LoadShaders() method in each Scene." << std::endl;
+	}
 	return it->second;
 }
 

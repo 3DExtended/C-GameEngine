@@ -18,6 +18,8 @@ namespace ENGINE {
 
 		GLint getUniform(std::string name);
 
+		static Shader* getShader(const std::string name);
+
 	private:
 		void _bind();
 		void _unbind();
@@ -30,5 +32,12 @@ namespace ENGINE {
 		void RegisterAllUniforms(std::string shaderSource);
 		void RegUniform(const std::string name);
 		void RegUniformArray(const std::string name);
+
+		static std::map<const std::string, Shader*, CmpStr> allShaders;
+
+	private: 
+		friend class SceneHandler;
+		static void dropAllShaders();
+
 	};
 }
