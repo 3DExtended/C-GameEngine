@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CGameEngine", "CGameEngine.vcxproj", "{65D5EE91-5451-4998-86A0-086E4212FB25}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example - Create a colored window", "Samples\Example - Create a colored window\Example - Create a colored window.vcxproj", "{D790F87A-8D62-4606-BA8C-D58B35F2C222}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{65D5EE91-5451-4998-86A0-086E4212FB25}.Release|x64.Build.0 = Release|x64
 		{65D5EE91-5451-4998-86A0-086E4212FB25}.Release|x86.ActiveCfg = Release|Win32
 		{65D5EE91-5451-4998-86A0-086E4212FB25}.Release|x86.Build.0 = Release|Win32
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Debug|x64.ActiveCfg = Debug|x64
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Debug|x64.Build.0 = Debug|x64
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Debug|x86.ActiveCfg = Debug|Win32
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Debug|x86.Build.0 = Debug|Win32
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Release|x64.ActiveCfg = Release|x64
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Release|x64.Build.0 = Release|x64
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Release|x86.ActiveCfg = Release|Win32
+		{D790F87A-8D62-4606-BA8C-D58B35F2C222}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
