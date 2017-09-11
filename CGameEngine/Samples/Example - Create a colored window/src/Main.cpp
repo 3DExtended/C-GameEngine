@@ -5,6 +5,6 @@
 
 int _tmain(int argc, _TCHAR* argv[]) {
 	
-	ENGINE::RunEngine();
+	ENGINE::RunEngine(0);
 	return 0;
 }

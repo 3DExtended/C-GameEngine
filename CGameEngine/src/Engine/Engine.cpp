@@ -3,27 +3,21 @@
 #include "Mesh.h"
 #include "Model.h"
 #include "Shader.h"
+#include "SceneHandler.h"
 
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
 
-void ENGINE::RunEngine()
+void ENGINE::EngineClass::RunEngine(int indexOfStartScene)
 {
+
+	//Move those values into config file
 	Display* display = new Display(800, 600, "The C++ GameEngine by Peter Esser");
 	display->SetClearColor(.2f, .4f, .8f);
 
-	Mesh *mesh = new Mesh();
-	mesh->addPoint(glm::vec3(0, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 0, 0, 1));
-	mesh->addPoint(glm::vec3(-1, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 1, 0, 1));
-	mesh->addPoint(glm::vec3(1, -1, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 0, 1, 1));
 
-	mesh->addTriangle(0, 1, 2);
-
-	Model* model = new Model(mesh);
-
-	//Load Shader
-	Shader* shader = new Shader(FileSystem::resFolderPrefix + "res/shader/diffuseShader");
-
+	SceneHandler* sceneHandler = SceneHandler::getInstance();
+	sceneHandler->SwitchScene(indexOfStartScene);
 
 
 	bool isRunning = true;
@@ -40,17 +34,16 @@ void ENGINE::RunEngine()
 		}
 
 		//Update gameState
+		sceneHandler->Update();
 
 		//clear old buffer so we can render on it
 		display->ClearBuffer();
-
-		//Render game
-		Bind(shader);
-
-		model->Render();
-
+	
+		//Render Game
+		sceneHandler->Render();
 
 		//swap buffer
 		display->SwapBuffer();
 	}
 }
+

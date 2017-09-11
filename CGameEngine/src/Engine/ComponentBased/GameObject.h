@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include "Component.h"
+
+
 class GameObject {
 public:
 	GameObject();
@@ -14,6 +16,7 @@ public:
 private:
 	std::vector<Component*> components;
 
+	friend class Scene;
 	void Awake();
 	void Start();
 	void Update();
