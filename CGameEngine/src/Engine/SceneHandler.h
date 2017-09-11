@@ -7,7 +7,6 @@
 
 
 namespace ENGINE {
-	class Scene;
 	class GameObject;
 	class Component;
 
@@ -17,7 +16,7 @@ namespace ENGINE {
 	class SceneHandler {
 	public:
 		static SceneHandler* getInstance();
-		static void AddScene(Scene* newScene) { getInstance()->AddScene(newScene); }
+		static void AddScene(Scene* newScene) { getInstance()->_AddScene(newScene); }
 		~SceneHandler();
 		void SwitchScene(uint16_t index);
 		void _AddScene(Scene* newScene);

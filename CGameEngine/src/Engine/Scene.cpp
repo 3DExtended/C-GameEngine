@@ -10,6 +10,13 @@ Scene::~Scene()
 {
 }
 
+GameObject * ENGINE::Scene::Instatiate()
+{
+	GameObject* go = new GameObject();
+	gameObjects.push_back(go);
+	return go;
+}
+
 void Scene::GameObjectAwake()
 {
 	for (GameObject* go : gameObjects) {

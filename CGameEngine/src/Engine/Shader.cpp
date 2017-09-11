@@ -2,6 +2,7 @@
 
 using namespace ENGINE;
 
+std::map<const std::string, Shader*, CmpStr> Shader::allShaders = std::map<const std::string, Shader*, CmpStr>();
 
 Shader::Shader(const std::string path)
 {

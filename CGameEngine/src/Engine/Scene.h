@@ -3,10 +3,21 @@
 #include "ComponentBased/Component.h"
 #include "ComponentBased/GameObject.h"
 
-class GameObject;
-class Component;
+#include "Mesh.h"
+#include "Model.h"
+#include "ComponentBased/Component.h"
+#include "ComponentBased/GameObject.h"
+#include "glm/glm.hpp"
+
+#include "Components/Renderer.h"
+
+
+
 
 namespace ENGINE {
+
+	class GameObject;
+	class Component;
 
 	class Scene {
 	public:
@@ -17,6 +28,8 @@ namespace ENGINE {
 		virtual void LoadShaders() {};
 		virtual void Update() {};
 		virtual void Destroy() {};
+
+		GameObject* Instatiate();
 
 	private:
 		std::vector<GameObject*> gameObjects;
