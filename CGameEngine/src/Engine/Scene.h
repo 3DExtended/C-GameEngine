@@ -6,26 +6,29 @@
 class GameObject;
 class Component;
 
-class Scene {
-public:
-	Scene();
-	~Scene();
+namespace ENGINE {
 
-	virtual void Start() {};
-	virtual void LoadShaders() {};
-	virtual void Update() {};
-	virtual void Destroy() {};
+	class Scene {
+	public:
+		Scene();
+		~Scene();
 
-private:
-	std::vector<GameObject*> gameObjects;
+		virtual void Start() {};
+		virtual void LoadShaders() {};
+		virtual void Update() {};
+		virtual void Destroy() {};
 
-private:
-	friend class SceneHandler;
-	void GameObjectAwake();
-	void GameObjectStart();
-	void GameObjectUpdate();
-	void GameObjectLateUpdate();
-	void GameObjectRender();
-	void GameObjectDestroy();
+	private:
+		std::vector<GameObject*> gameObjects;
 
-};
+	private:
+		friend class SceneHandler;
+		void GameObjectAwake();
+		void GameObjectStart();
+		void GameObjectUpdate();
+		void GameObjectLateUpdate();
+		void GameObjectRender();
+		void GameObjectDestroy();
+
+	};
+}

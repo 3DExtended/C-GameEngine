@@ -1,6 +1,8 @@
 #include "SceneHandler.h"
 
-SceneHandler* SceneHandler::instance = nullptr;
+using namespace ENGINE;
+
+ENGINE::SceneHandler* ENGINE::SceneHandler::instance = nullptr;
 
 SceneHandler * SceneHandler::getInstance()
 {

@@ -1,5 +1,6 @@
 #include "Scene.h"
 
+using namespace ENGINE;
 Scene::Scene()
 {
 	//TODO maybe create a default camera 

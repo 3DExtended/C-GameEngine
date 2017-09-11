@@ -8,7 +8,6 @@ namespace ENGINE {
 
 	};
 
-	void RunEngine(int indexOfStartScene) {
-		EngineClass::RunEngine(indexOfStartScene);
-	}
+	
 }
+
