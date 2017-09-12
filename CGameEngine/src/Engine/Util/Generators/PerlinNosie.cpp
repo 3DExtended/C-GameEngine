@@ -34,6 +34,10 @@ PerlinNoise::~PerlinNoise()
 {
 }
 
+float PerlinNoise::getRangeOne(float x, float y) {
+	return (get(x, y) + 1.0f) / 2.0f;
+}
+
 float PerlinNoise::get(float x, float y)
 {
 	int minX = (int)x;

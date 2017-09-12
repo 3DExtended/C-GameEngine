@@ -16,7 +16,7 @@ void MainScene::Start()
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	TerrainGeneration terrainGen;
-	Mesh *mesh = terrainGen.createTerrainMesh(10, 10, 0.25);
+	Mesh *mesh = terrainGen.createTerrainMesh(500, 500, 10.0);
 
 	Model* model = new Model(mesh);
 
@@ -27,7 +27,7 @@ void MainScene::Start()
 	triangle->AddComponent(renderer);
 	triangle->transform.position = glm::vec3(0, -2, -10);
 	triangle->transform.scale = glm::vec3(0.5);
-	triangle->AddComponent(new RotateObject());
+	//triangle->AddComponent(new RotateObject());
 
 	triangle->AddComponent(new CameraMovement());
 

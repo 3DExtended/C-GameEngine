@@ -2,6 +2,8 @@
 #include "../Camera.h"
 #include "../Input.h"
 #include "../Util/Constants.h"
+#include <iostream>
+
 namespace ENGINE {
 	class Scene;
 	class Camera;

@@ -4,6 +4,8 @@ using namespace ENGINE;
 void CameraMovement::Start()
 {
 	camera = GetCurrentCamera();
+	camera->yaw = -2.59f;
+	camera->pitch = -6.2f;
 }
 
 void CameraMovement::Update()
@@ -85,5 +87,7 @@ void CameraMovement::Update()
 	******************/
 	camera->forward = glm::vec3(sinf(camera->yaw*(float)PI / 180)*cosf(camera->pitch*(float)PI / 180), sinf(camera->pitch*(float)PI / 180), -cosf(camera->yaw*(float)PI / 180)*cosf(camera->pitch*(float)PI / 180));
 	camera->up = glm::vec3(sinf(camera->yaw*(float)PI / 180)*cosf((camera->pitch + 90)*(float)PI / 180), sinf((camera->pitch + 90)*(float)PI / 180), -cosf(camera->yaw*(float)PI / 180)*cosf((camera->pitch + 90)*(float)PI / 180));
+
+
 
 }

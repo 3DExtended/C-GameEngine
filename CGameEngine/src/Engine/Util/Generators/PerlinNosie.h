@@ -9,6 +9,7 @@ namespace ENGINE {
 			PerlinNoise(long seed, int size);
 			PerlinNoise(int size);
 			~PerlinNoise();
+			float getRangeOne(float x, float y);
 			float get(float x, float y);
 		private:
 			std::vector<glm::vec2> noise;
