@@ -3,6 +3,7 @@
 #include "../Model.h"
 #include "../Shader.h"
 #include <string>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace ENGINE {
 	class Renderer : public Component{

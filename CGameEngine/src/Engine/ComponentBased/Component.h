@@ -1,9 +1,21 @@
 #pragma once
+#include "../Camera.h"
+
 namespace ENGINE {
+	class Scene;
+	class Camera;
+	class GameObject;
+	class SceneHandler;
+
 	class Component {
 	public:
-		Component() {};
+		Component();
 
+		Scene* GetCurrentScene();
+
+		Camera* GetCurrentCam();
+
+		GameObject* GetCurrentGameObject();
 	private:
 		friend class GameObject;
 

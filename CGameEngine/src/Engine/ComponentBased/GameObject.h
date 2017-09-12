@@ -1,9 +1,11 @@
 #pragma once
 #include <vector>
 #include <string>
+#include "Transform.h"
 #include "Component.h"
 
 namespace ENGINE {
+
 	class GameObject {
 	public:
 		GameObject();
@@ -13,6 +15,7 @@ namespace ENGINE {
 
 		void AddComponent(Component* comp);
 
+		Transform transform;
 	private:
 		std::vector<Component*> components;
 
@@ -25,5 +28,9 @@ namespace ENGINE {
 		void Destroy();
 
 		const std::string name = "";
+
+	private:
+		friend class Component;
+		static GameObject* currentGameObject;
 	};
 }

@@ -21,6 +21,8 @@ namespace ENGINE {
 		void SwitchScene(uint16_t index);
 		void _AddScene(Scene* newScene);
 
+		Scene* GetCurrentScene() { return curScene; }
+
 	private:
 		static SceneHandler* instance;
 		std::vector<Scene*> scenes;
