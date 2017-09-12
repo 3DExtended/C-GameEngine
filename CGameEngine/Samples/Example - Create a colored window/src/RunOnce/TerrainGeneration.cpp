@@ -40,7 +40,7 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 			counterX++;
 
 			//range -20 to 20
-			float baseHeight = noiseHeightMap->get((x + sizeX / 2.0f) / 100.0f, (z + sizeZ / 2.0f) / 100.0f) ;
+			float baseHeight = noiseHeightMap->get((x + sizeX / 2.0f) / 150.0f, (z + sizeZ / 2.0f) / 150.0f) ;
 			baseHeight *= 20.0;
 
 			float largeFreq = noiseHeightMap->get((x + sizeX / 2.0f) / 25.0f, (z + sizeZ / 2.0f) / 25.0f);
@@ -170,7 +170,7 @@ glm::vec4 TerrainGeneration::CalculateColor(float averageHeight, glm::vec3 norma
 
 
 	const int numberOfColors = 3;
-	float thresholds[numberOfColors]{	-5,		//wet sand
+	float thresholds[numberOfColors]{	-4.5,		//wet sand
 										-3,		//sand
 										1.45 };	//grass
 
@@ -203,9 +203,12 @@ glm::vec4 TerrainGeneration::CalculateColor(float averageHeight, glm::vec3 norma
 		tempColor = glm::vec3((float)91 / 255.0f, (float)100 / 255.0f, (float)107 / 255.0f);//Rock
 	}
 
+	float dot = glm::dot(normal, glm::vec3(0, 1, 0)) + 1.0;
+	dot /= -2.0;
+
 
 	float ranNum = (float)rand() / (float)RAND_MAX;
-	ranNum = (ranNum) / 20.0f;
+	ranNum = (ranNum) / 20.0f * dot;
 
 	return glm::vec4(tempColor.x +ranNum, tempColor.y +ranNum , tempColor.z + ranNum,1.0);
 }

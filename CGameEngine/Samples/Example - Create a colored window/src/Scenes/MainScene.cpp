@@ -16,7 +16,7 @@ void MainScene::Start()
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	TerrainGeneration terrainGen;
-	Mesh *mesh = terrainGen.createTerrainMesh(500, 500, 10.0);
+	Mesh *mesh = terrainGen.createTerrainMesh(500, 500, 5.0);
 
 	Model* model = new Model(mesh);
 
