@@ -25,7 +25,7 @@ void MainScene::Start()
 	GameObject * triangle = Instatiate();
 	triangle->AddComponent(renderer);
 	triangle->transform.position = glm::vec3(0, 0, -10);
-
+	triangle->transform.scale = glm::vec3(3);
 	triangle->AddComponent(new RotateObject());
 }
 
