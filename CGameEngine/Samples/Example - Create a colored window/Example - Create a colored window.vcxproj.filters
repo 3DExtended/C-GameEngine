@@ -27,6 +27,9 @@
     <ClCompile Include="src\RunOnce\TerrainGeneration.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Components\CameraMovement.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scenes\MainScene.h">
@@ -36,6 +39,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\RunOnce\TerrainGeneration.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\CameraMovement.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

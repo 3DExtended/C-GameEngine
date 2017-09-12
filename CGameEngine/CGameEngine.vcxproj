@@ -162,6 +162,7 @@
     <ClCompile Include="src\Engine\Components\Renderer.cpp" />
     <ClCompile Include="src\Engine\Display.cpp" />
     <ClCompile Include="src\Engine\Engine.cpp" />
+    <ClCompile Include="src\Engine\Input.cpp" />
     <ClCompile Include="src\Engine\Mesh.cpp" />
     <ClCompile Include="src\Engine\Model.cpp" />
     <ClCompile Include="src\Engine\Scene.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="src\Engine\ComponentBased\GameObject.h" />
     <ClInclude Include="src\Engine\ComponentBased\Transform.h" />
     <ClInclude Include="src\Engine\Components\Renderer.h" />
+    <ClInclude Include="src\Engine\Input.h" />
     <ClInclude Include="src\Engine\Scene.h" />
     <ClInclude Include="src\Engine\Display.h" />
     <ClInclude Include="src\Engine\Engine.h" />
@@ -185,6 +187,7 @@
     <ClInclude Include="src\Engine\Shader.h" />
     <ClInclude Include="src\Engine\Util\AutoUnbind.h" />
     <ClInclude Include="src\Engine\Util\CmpStr.h" />
+    <ClInclude Include="src\Engine\Util\Constants.h" />
     <ClInclude Include="src\Engine\Util\FileSystem.h" />
     <ClInclude Include="src\Engine\Util\Generators\PerlinNosie.h" />
     <ClInclude Include="src\Engine\Util\ScopeWatch.h" />

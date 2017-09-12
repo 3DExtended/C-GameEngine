@@ -7,6 +7,7 @@ TerrainGeneration::TerrainGeneration()
 }
 
 TerrainGeneration::TerrainGeneration(long seed1, long seed2, long seed3)
+	:seed1(seed1), seed2(seed2), seed3(seed3)
 {
 
 }
@@ -35,8 +36,8 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 
 	Mesh *terrain = new Mesh();
 
-	float startZ = -1.0*sizeZ / 2.0f;
-	float startX = -1.0*sizeX / 2.0f;
+	float startZ = -1.0f * sizeZ / 2.0f;
+	float startX = -1.0f * sizeX / 2.0f;
 
 	std::vector<glm::vec3> vertecies;
 
@@ -50,7 +51,7 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 			float height = noiseHeightMap->get((x + sizeX / 2.0f) / 2.0f, (z + sizeZ / 2.0f) / 2.0f)
 				+ noiseHeightMap->get((x + sizeX / 2.0f)* 5.0f, (z + sizeZ / 2.0f)* 5.0f) / 2.0			//fine noise
 				+ noiseHeightMap->get((x + sizeX / 2.0f) / 5.0f, (z + sizeZ / 2.0f) / 5.0f) * 3.0			//large noise
-				+ 1.0;
+				+ 1.0f;
 
 			const float dampenHill = 0.5f;
 			//make hill from height

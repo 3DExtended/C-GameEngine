@@ -2,9 +2,9 @@
 
 
 #include "../Components/Misc/RotateObject.h"
+#include "../Components/CameraMovement.h"
 #include "../RunOnce/TerrainGeneration.h"
 
-#include "GL\glew.h"
 
 void MainScene::LoadShaders()
 {
@@ -15,10 +15,8 @@ void MainScene::Start()
 {
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	glDisable(GL_CULL_FACE);
-
 	TerrainGeneration terrainGen;
-	Mesh *mesh = terrainGen.createTerrainMesh(10, 10, 0.2);
+	Mesh *mesh = terrainGen.createTerrainMesh(10, 10, 0.25);
 
 	Model* model = new Model(mesh);
 
@@ -31,7 +29,7 @@ void MainScene::Start()
 	triangle->transform.scale = glm::vec3(0.5);
 	triangle->AddComponent(new RotateObject());
 
-
+	triangle->AddComponent(new CameraMovement());
 
 }
 

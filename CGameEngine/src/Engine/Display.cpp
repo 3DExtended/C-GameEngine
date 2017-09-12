@@ -1,9 +1,12 @@
 #include "Display.h"
 
 using namespace ENGINE;
+
+Display* Display::instance = nullptr;
 Display::Display(int width, int height, const std::string title)
 	: width(width), height(height)
 {
+	Display::instance = this;
 	glewExperimental = GL_TRUE;
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
 		std::cerr << "Could not init SDL2. Received following error: " << SDL_GetError() << std::endl;
@@ -71,4 +74,14 @@ void Display::SwapBuffer()
 
 void Display::SetClearColor(float r, float g, float b) {
 	glClearColor(r, g, b, 1.0f);
+}
+
+Display * Display::GetInstance()
+{
+	return instance;
+}
+
+void Display::SetMousePosition(int x, int y)
+{
+	SDL_WarpMouseInWindow(window, x,y);
 }

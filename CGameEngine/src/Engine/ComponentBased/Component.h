@@ -1,6 +1,7 @@
 #pragma once
 #include "../Camera.h"
-
+#include "../Input.h"
+#include "../Util/Constants.h"
 namespace ENGINE {
 	class Scene;
 	class Camera;
@@ -13,9 +14,13 @@ namespace ENGINE {
 
 		Scene* GetCurrentScene();
 
-		Camera* GetCurrentCam();
+		Camera* GetCurrentCamera();
 
 		GameObject* GetCurrentGameObject();
+
+		void ShowMouse(bool showMouse);
+
+		void SetMousePosition(int x, int y);
 	private:
 		friend class GameObject;
 

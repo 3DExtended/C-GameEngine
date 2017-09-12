@@ -4,6 +4,7 @@
 #include "Model.h"
 #include "Shader.h"
 #include "SceneHandler.h"
+#include "Input.h"
 
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
@@ -30,7 +31,23 @@ void ENGINE::EngineClass::RunEngine(int indexOfStartScene)
 			if (e.type == SDL_QUIT) {	//Quit event is triggered after hitting the red X in the upper right corner
 				isRunning = false;
 			}
-			//TODO handle key events
+			else if (e.type == SDL_KEYDOWN) {
+				Input::SetKeyState(e.key.keysym.scancode, true);
+			}
+			else if (e.type == SDL_KEYUP) {
+				Input::SetKeyState(e.key.keysym.scancode, false);
+			}
+			else if (e.type == SDL_MOUSEBUTTONUP) {
+				Input::SetButtonState(e.button.button, false);
+			}
+			else if (e.type == SDL_MOUSEBUTTONDOWN) {
+				Input::SetButtonState(e.button.button, true);
+			}
+			else if (e.type == SDL_MOUSEMOTION) {
+				int x, y;
+				SDL_GetMouseState(&x, &y);
+				Input::SetMousePosition(x,y);
+			}
 		}
 
 		//Update gameState

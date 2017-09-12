@@ -19,7 +19,7 @@ void Renderer::Render()
 	GLint normal = shader->getUniform("nmatrix");
 	GLint pmatrix = shader->getUniform("pmatrix");
 
-	Camera* cam = GetCurrentCam();
+	Camera* cam = GetCurrentCamera();
 
 	//calculate uniforms and push them
 	glm::mat4 modelMatrix = GetCurrentGameObject()->transform.GetModelMatrix();

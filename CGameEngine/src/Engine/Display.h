@@ -50,6 +50,7 @@ namespace ENGINE {
 		/// <param name="b">Blue part of color (Range 0-1)</param>
 		void SetClearColor(float r, float g, float b);
 
+		static Display* GetInstance();
 	private:
 		//width and height of window
 		int width, height;
@@ -59,5 +60,12 @@ namespace ENGINE {
 
 		//The window handler by SDL2
 		SDL_Window * window;
+
+		static Display* instance;
+
+	private:
+		friend class Component;
+		friend class Scene;
+		void SetMousePosition(int x, int y);
 	};
 }
