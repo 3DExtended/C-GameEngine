@@ -62,9 +62,9 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 			const float strength = 0.75f;
 
 			glm::vec3 pos = glm::vec3(
-				x + noiseXOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ,
+				x,// + noiseXOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ,
 				height * hillX * hillZ * dampenHill,
-				z + noiseZOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ
+				z// + noiseZOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ
 			);
 
 			vertecies.push_back(pos);
@@ -96,3 +96,78 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 
 	return terrain;
 }
+
+
+//This code create one solid mesh with shared vertecies... Not sure how useful it really is yet
+/*
+Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
+{
+PerlinNoise* noiseHeightMap;
+PerlinNoise* noiseXOffset;
+PerlinNoise* noiseZOffset;
+
+
+if (seed1 == 0 && seed2 == 0 && seed3 == 0) {
+noiseHeightMap = new PerlinNoise(10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+noiseXOffset = new PerlinNoise(10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+noiseZOffset = new PerlinNoise(10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+}
+else {
+noiseHeightMap = new PerlinNoise(seed1, 10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+noiseXOffset = new PerlinNoise(seed2,	10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+noiseZOffset = new PerlinNoise(seed3,	10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
+}
+
+
+
+
+
+Mesh *terrain = new Mesh();
+
+float startZ = -1.0f * sizeZ / 2.0f;
+float startX = -1.0f * sizeX / 2.0f;
+
+
+for (float z = startZ; z < sizeZ / 2.0f; z += res) {
+for (float x = startX; x < sizeX / 2.0f; x += res) {
+//color
+glm::vec4 color(0.2, 0.9, 0.2, 1);
+
+//position
+float height = noiseHeightMap->get((x + sizeX / 2.0f) / 2.0f, (z + sizeZ / 2.0f) / 2.0f)
++ noiseHeightMap->get((x + sizeX / 2.0f)* 5.0f, (z + sizeZ / 2.0f)* 5.0f) / 2.0			//fine noise
++ noiseHeightMap->get((x + sizeX / 2.0f) / 5.0f, (z + sizeZ / 2.0f) / 5.0f) * 3.0			//large noise
++ 1.0f;
+
+const float dampenHill = 0.5f;
+//make hill from height
+float hillX = -glm::cos((x + sizeX / 2.0f) / sizeX * 2 * glm::pi<float>()) + 1;
+float hillZ = -glm::cos((z + sizeZ / 2.0f) / sizeZ * 2 * glm::pi<float>()) + 1;
+
+const float fineVSLarge = 0.2f;
+const float strength = 0.75f;
+
+glm::vec3 pos = glm::vec3(
+x + noiseXOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ,
+height * hillX * hillZ * dampenHill,
+z + noiseZOffset->get((x + sizeX / 2.0f)*fineVSLarge, (z + sizeZ / 2.0f)*fineVSLarge) / strength * hillX * hillZ
+);
+
+int pointID = terrain->addPoint(pos, glm::vec3(0), glm::vec2(0), color);
+
+if (z != startZ && x != startX) {
+
+int pointLeft = pointID - 1;
+int pointDown = pointID - glm::ceil(sizeX / res);
+int pointDownLeft = pointDown - 1;
+
+terrain->addTriangleAndRecalcNormals(pointID, pointDownLeft, pointLeft);
+terrain->addTriangleAndRecalcNormals(pointID, pointDown, pointDownLeft);
+
+}
+
+}
+}
+
+return terrain;
+}*/
