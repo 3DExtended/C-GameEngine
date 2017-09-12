@@ -21,9 +21,15 @@
     <ClCompile Include="src\Scenes\MainScene.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Components\Misc\RotateObject.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Scenes\MainScene.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\Misc\RotateObject.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

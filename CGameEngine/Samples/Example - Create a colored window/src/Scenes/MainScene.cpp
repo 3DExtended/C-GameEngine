@@ -1,5 +1,8 @@
 #include "MainScene.h"
 
+
+#include "../Components/Misc/RotateObject.h"
+
 void MainScene::LoadShaders()
 {
 	Shader *shader = new Shader("./res/shader/diffuseShader");
@@ -21,8 +24,9 @@ void MainScene::Start()
 	//Create GameObject
 	GameObject * triangle = Instatiate();
 	triangle->AddComponent(renderer);
+	triangle->transform.position = glm::vec3(0, 0, -10);
 
-	
+	triangle->AddComponent(new RotateObject());
 }
 
 void MainScene::Update()
