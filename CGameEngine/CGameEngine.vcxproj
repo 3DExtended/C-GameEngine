@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\Camera.cpp" />
     <ClCompile Include="src\Engine\ComponentBased\GameObject.cpp" />
     <ClCompile Include="src\Engine\Components\Renderer.cpp" />
     <ClCompile Include="src\Engine\Display.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="src\Engine\Util\FileSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\Camera.h" />
     <ClInclude Include="src\Engine\ComponentBased\Component.h" />
     <ClInclude Include="src\Engine\ComponentBased\GameObject.h" />
     <ClInclude Include="src\Engine\Components\Renderer.h" />

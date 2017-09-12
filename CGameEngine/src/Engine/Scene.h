@@ -10,7 +10,7 @@
 #include "glm/glm.hpp"
 
 #include "Components/Renderer.h"
-
+#include "Camera.h"
 
 
 
@@ -30,6 +30,10 @@ namespace ENGINE {
 		virtual void Destroy() {};
 
 		GameObject* Instatiate();
+
+		Camera* cam = new Camera(glm::vec3(0, 0, 0), 70.0f, 
+			800.0f / 600.0f,	//TODO replace this by window.width / window.height 
+			0.1f, 1000.0f);
 
 	private:
 		std::vector<GameObject*> gameObjects;
