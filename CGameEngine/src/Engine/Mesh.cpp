@@ -1,4 +1,7 @@
 #include "Mesh.h"
+
+#include <iostream>
+
 using namespace ENGINE;
 Mesh::Mesh()
 {
@@ -8,11 +11,11 @@ Mesh::~Mesh()
 {
 }
 
-int Mesh::addPoint(glm::vec3 vertexPos, glm::vec3 vertexNormal, glm::vec2 vertexTexture, glm::vec4 vertexColor)
+int Mesh::addPoint(glm::vec3 vertexPos, glm::vec3 vertexNormal, glm::vec2 vertexTexture, glm::vec4 vertexColor, bool disablePointSharing)
 {
 	//first check if we already have this set of information
 	uint32_t i = 0;
-	while (i < (uint32_t)point.size()) {
+	while (!disablePointSharing && i < (uint32_t)point.size()) {
 		if (point[i] == vertexPos.x &&point[i + 1] == vertexPos.y && point[i + 2] == vertexPos.z)
 			if (point[i + 3] == vertexNormal.x &&point[i + 4] == vertexNormal.y && point[i + 5] == vertexNormal.z)
 				if (point[i + 6] == vertexTexture.x &&point[i + 7] == vertexTexture.y)
@@ -47,3 +50,34 @@ void Mesh::addTriangle(uint32_t a, uint32_t b, uint32_t c)
 	index.push_back(b);
 	index.push_back(c);
 }
+
+void Mesh::addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c)
+{
+	index.push_back(a);
+	index.push_back(b);
+	index.push_back(c);
+
+
+	glm::vec3 posA = glm::vec3(point[a * 12 + 0], point[a * 12 + 1], point[a * 12 + 2]);
+	glm::vec3 posB = glm::vec3(point[b * 12 + 0], point[b * 12 + 1], point[b * 12 + 2]);
+	glm::vec3 posC = glm::vec3(point[c * 12 + 0], point[c * 12 + 1], point[c * 12 + 2]);
+
+	glm::vec3 u = posB - posA;
+	glm::vec3 v = posC - posA;
+	glm::vec3 normal(u.y * v.z - u.z * v.y, u.z*v.x - u.x*v.z, u.x*v.y - u.y*v.x);
+
+	point[a * 12 + 3] = normal.x;
+	point[a * 12 + 4] = normal.y;
+	point[a * 12 + 5] = normal.z;
+
+	point[b * 12 + 3] = normal.x;
+	point[b * 12 + 4] = normal.y;
+	point[b * 12 + 5] = normal.z;
+
+	point[c * 12 + 3] = normal.x;
+	point[c * 12 + 4] = normal.y;
+	point[c * 12 + 5] = normal.z;
+
+
+}
+

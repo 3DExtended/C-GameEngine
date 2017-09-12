@@ -168,6 +168,7 @@
     <ClCompile Include="src\Engine\SceneHandler.cpp" />
     <ClCompile Include="src\Engine\Shader.cpp" />
     <ClCompile Include="src\Engine\Util\FileSystem.cpp" />
+    <ClCompile Include="src\Engine\Util\Generators\PerlinNosie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Camera.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="src\Engine\Util\AutoUnbind.h" />
     <ClInclude Include="src\Engine\Util\CmpStr.h" />
     <ClInclude Include="src\Engine\Util\FileSystem.h" />
+    <ClInclude Include="src\Engine\Util\Generators\PerlinNosie.h" />
     <ClInclude Include="src\Engine\Util\ScopeWatch.h" />
   </ItemGroup>
   <ItemGroup>

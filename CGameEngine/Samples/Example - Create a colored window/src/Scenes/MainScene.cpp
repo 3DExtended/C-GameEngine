@@ -2,6 +2,9 @@
 
 
 #include "../Components/Misc/RotateObject.h"
+#include "../RunOnce/TerrainGeneration.h"
+
+#include "GL\glew.h"
 
 void MainScene::LoadShaders()
 {
@@ -10,12 +13,12 @@ void MainScene::LoadShaders()
 
 void MainScene::Start()
 {
-	Mesh *mesh = new Mesh();
-	mesh->addPoint(glm::vec3(0, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(1, 0, 0, 1));
-	mesh->addPoint(glm::vec3(-1, 0, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 0, 1, 1));
-	mesh->addPoint(glm::vec3(1, -1, 0), glm::vec3(0, 0, -1), glm::vec2(0, 0), glm::vec4(0, 1, 0, 1));
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-	mesh->addTriangle(0, 1, 2);
+	glDisable(GL_CULL_FACE);
+
+	TerrainGeneration terrainGen;
+	Mesh *mesh = terrainGen.createTerrainMesh(10, 10, 0.2);
 
 	Model* model = new Model(mesh);
 
@@ -24,9 +27,12 @@ void MainScene::Start()
 	//Create GameObject
 	GameObject * triangle = Instatiate();
 	triangle->AddComponent(renderer);
-	triangle->transform.position = glm::vec3(0, 0, -10);
-	triangle->transform.scale = glm::vec3(3);
+	triangle->transform.position = glm::vec3(0, -2, -10);
+	triangle->transform.scale = glm::vec3(0.5);
 	triangle->AddComponent(new RotateObject());
+
+
+
 }
 
 void MainScene::Update()
