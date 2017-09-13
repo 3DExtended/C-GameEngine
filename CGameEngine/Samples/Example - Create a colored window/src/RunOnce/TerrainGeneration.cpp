@@ -16,9 +16,11 @@ TerrainGeneration::TerrainGeneration(long seed)
 
 Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 {
-	PerlinNoise* noiseHeightMap;
+	this->sizeX = sizeX;
+	this->sizeZ = sizeZ;
+	
 
-	if (seed == 0 && seed2 == 0 && seed3 == 0) {
+	if (seed == 0) {
 		noiseHeightMap = new PerlinNoise(10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));}
 	else {
 		noiseHeightMap = new PerlinNoise(seed, 10 * (int)MAX(glm::ceil(sizeX + res), glm::ceil(sizeZ + res)));
@@ -49,7 +51,7 @@ Mesh * TerrainGeneration::createTerrainMesh(float sizeX, float sizeZ, float res)
 			float middleFreq = noiseHeightMap->get((x + sizeX / 2.0f) / 2.0f, (z + sizeZ / 2.0f) / 2.0f);
 			middleFreq *= 0.5f;
 
-			baseHeight *= middleFreq + 1.0f;
+			//baseHeight *= middleFreq + 1.0f;
 
 			float lowFreq = noiseHeightMap->get((x + sizeX / 2.0f) / 0.1f, (z + sizeZ / 2.0f) / 0.1f);
 			lowFreq *= 0.2f;
@@ -104,7 +106,7 @@ void TerrainGeneration::addTrianglesMode1(Mesh * terrain, std::vector<glm::vec3>
 	glm::vec3 posC = vertecies[z * counterX + x];
 
 	glm::vec3 normal = CalculateNormal(posA, posB, posC);
-	glm::vec4 color = CalculateColor(MAXT(posA.y, posB.y, posC.y),normal);
+	glm::vec4 color = CalculateColor((posA+posB+posC)/3.0f,normal);
 
 	int a = terrain->addPoint(posA, normal, glm::vec2(0), color, true);
 	int b = terrain->addPoint(posB, normal, glm::vec2(0), color, true);
@@ -118,7 +120,7 @@ void TerrainGeneration::addTrianglesMode1(Mesh * terrain, std::vector<glm::vec3>
 	posC = vertecies[z * counterX + x];
 
 	normal = CalculateNormal(posA, posB, posC);
-	color = CalculateColor(MAXT(posA.y, posB.y,posC.y), normal);
+	color = CalculateColor((posA + posB + posC) / 3.0f, normal);
 
 	a = terrain->addPoint(posA, normal, glm::vec2(0), color, true);
 	b = terrain->addPoint(posB, normal, glm::vec2(0), color, true);
@@ -135,7 +137,7 @@ void TerrainGeneration::addTrianglesMode2(Mesh * terrain, std::vector<glm::vec3>
 	glm::vec3 posC = vertecies[z * counterX + x];
 
 	glm::vec3 normal = CalculateNormal(posA, posB, posC);
-	glm::vec4 color = CalculateColor(MAXT(posA.y, posB.y, posC.y), normal);
+	glm::vec4 color = CalculateColor((posA + posB + posC) / 3.0f, normal);
 
 	int a = terrain->addPoint(posA, normal, glm::vec2(0), color, true);
 	int b = terrain->addPoint(posB, normal, glm::vec2(0), color, true);
@@ -148,7 +150,7 @@ void TerrainGeneration::addTrianglesMode2(Mesh * terrain, std::vector<glm::vec3>
 	posC = vertecies[(z + 1) * counterX + (x + 1)];
 
 	normal = CalculateNormal(posA, posC, posB);
-	color = CalculateColor(MAXT(posA.y, posB.y, posC.y), normal);
+	color = CalculateColor((posA + posB + posC) / 3.0f, normal);
 
 
 	a = terrain->addPoint(posA, normal, glm::vec2(0), color, true);
@@ -158,13 +160,13 @@ void TerrainGeneration::addTrianglesMode2(Mesh * terrain, std::vector<glm::vec3>
 	terrain->addTriangle(a, c, b);
 }
 
-glm::vec4 TerrainGeneration::CalculateColor(float averageHeight, glm::vec3 normal)
+glm::vec4 TerrainGeneration::CalculateColor(glm::vec3 averagePos, glm::vec3 normal)
 {
 	static float maxHeight = 0;
-	maxHeight = MAX(maxHeight, averageHeight);
+	maxHeight = MAX(maxHeight, averagePos.y);
 
 	static float minHeight = 0;
-	minHeight = MIN(minHeight, averageHeight);
+	minHeight = MIN(minHeight, averagePos.y);
 
 	//std::cout << "Max: " << maxHeight << ", Min: " << minHeight << std::endl;
 
@@ -175,7 +177,7 @@ glm::vec4 TerrainGeneration::CalculateColor(float averageHeight, glm::vec3 norma
 										1.45 };	//grass
 
 	int i = 0;
-	while (i < numberOfColors && thresholds[i] < averageHeight) {
+	while (i < numberOfColors && thresholds[i] < averagePos.y) {
 		i++;
 	}
 
@@ -207,7 +209,7 @@ glm::vec4 TerrainGeneration::CalculateColor(float averageHeight, glm::vec3 norma
 	dot /= -2.0;
 
 
-	float ranNum = (float)rand() / (float)RAND_MAX;
+	float ranNum = noiseHeightMap->getRangeOne((averagePos.x + sizeX / 2.0f) / 150.0f, (averagePos.z + sizeZ / 2.0f) / 150.0f);
 	ranNum = (ranNum) / 20.0f * dot;
 
 	return glm::vec4(tempColor.x +ranNum, tempColor.y +ranNum , tempColor.z + ranNum,1.0);
