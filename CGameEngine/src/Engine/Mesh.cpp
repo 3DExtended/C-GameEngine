@@ -81,3 +81,26 @@ void Mesh::addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c)
 
 }
 
+void Mesh::transformMesh(glm::mat4 transformationMatrix)
+{
+	glm::mat4 normalMatrix = glm::transpose(glm::inverse(transformationMatrix));
+
+	for (int i = 0; i < point.size(); i+=12) {
+		//update positions
+		glm::vec4 pos(point[i + 0], point[i + 1], point[i + 2],1.0f);
+		pos = transformationMatrix * pos;
+		point[i + 0] = pos.x;
+		point[i + 1] = pos.y;
+		point[i + 2] = pos.z;
+
+		//update normal
+		glm::vec4 normal(point[i + 3], point[i + 4], point[i + 5], 0.0f);
+		normal = normalMatrix * normal;
+		point[i + 3] = normal.x;
+		point[i + 4] = normal.y;
+		point[i + 5] = normal.z;
+
+
+	}
+}
+

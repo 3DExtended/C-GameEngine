@@ -22,7 +22,7 @@ namespace ENGINE {
 
 		void addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c);
 
-
+		void transformMesh(glm::mat4 transformationMatrix);
 	private:
 		friend class Model;
 		std::vector<float> point;

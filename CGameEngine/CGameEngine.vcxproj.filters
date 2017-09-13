@@ -60,6 +60,9 @@
     <ClCompile Include="src\Engine\Util\Generators\IcosphereGenerator.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Util\Math.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">
@@ -120,6 +123,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\Generators\IcosphereGenerator.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\Math.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
