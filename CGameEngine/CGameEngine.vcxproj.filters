@@ -63,6 +63,9 @@
     <ClCompile Include="src\Engine\Util\Math.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\ComponentBased\Transform.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">

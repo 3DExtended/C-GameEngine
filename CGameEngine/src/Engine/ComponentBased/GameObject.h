@@ -17,6 +17,9 @@ namespace ENGINE {
 
 		Transform transform;
 
+		GameObject* GetParent();
+		std::vector<GameObject*> GetChilds();
+
 		void SetParent(GameObject* obj);
 		void AddChild(GameObject* obj);
 	private:

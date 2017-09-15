@@ -7,11 +7,15 @@ GameObject* GameObject::currentGameObject = nullptr;
 
 GameObject::GameObject()
 {
+	transform = Transform();
+	transform.gameObject = this;
 }
 
 GameObject::GameObject(const std::string name)
 	:name(name)
 {
+	transform = Transform();
+	transform.gameObject = this;
 }
 
 GameObject::~GameObject()
@@ -105,6 +109,16 @@ void GameObject::Destroy()
 void GameObject::AddComponent(Component* comp)
 {
 	components.push_back(comp);
+	comp->gameObject = this;
+}
+
+GameObject * ENGINE::GameObject::GetParent() { 
+	return this->parent; 
+}
+
+std::vector<GameObject*> ENGINE::GameObject::GetChilds()
+{
+	return childs;
 }
 
 void ENGINE::GameObject::SetParent(GameObject * obj)
@@ -114,7 +128,7 @@ void ENGINE::GameObject::SetParent(GameObject * obj)
 	}
 	else {
 		this->parent = obj;
-		obj->AddChild(this);
+		obj->childs.push_back(this);
 	}
 }
 
@@ -125,6 +139,6 @@ void GameObject::AddChild(GameObject * obj)
 	}
 	else {
 		childs.push_back(obj);
-		obj->SetParent(this);
+		obj->parent = this;
 	}
 }

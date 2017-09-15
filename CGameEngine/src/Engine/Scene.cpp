@@ -10,9 +10,16 @@ Scene::~Scene()
 {
 }
 
-GameObject * ENGINE::Scene::Instatiate()
+GameObject * Scene::Instatiate()
 {
 	GameObject* go = new GameObject();
+	gameObjects.push_back(go);
+	return go;
+}
+
+GameObject * Scene::Instatiate(const std::string name)
+{
+	GameObject* go = new GameObject(name);
 	gameObjects.push_back(go);
 	return go;
 }

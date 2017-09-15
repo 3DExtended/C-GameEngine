@@ -20,6 +20,10 @@ namespace ENGINE {
 
 		GameObject* GetCurrentGameObject();
 
+		GameObject* Instantiate();
+
+		GameObject * Instantiate(const std::string name);
+
 		void ShowMouse(bool showMouse);
 
 		void SetMousePosition(int x, int y);
@@ -33,5 +37,8 @@ namespace ENGINE {
 		virtual void Render() {};
 		virtual void Destroy() {};
 
+	protected:
+		friend class GameObject;
+		GameObject* gameObject;
 	};
 }
