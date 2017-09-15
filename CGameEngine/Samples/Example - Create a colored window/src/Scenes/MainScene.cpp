@@ -1,9 +1,6 @@
 #include "MainScene.h"
-
-
 #include "../Components/Misc/RotateObject.h"
 #include "../Components/CameraMovement.h"
-#include "../RunOnce/TerrainGeneration.h"
 #include "Engine/Util/Generators/IcosphereGenerator.h"
 #include <glm/gtx/transform2.hpp>
 #include "Engine/Util/Math.h"
@@ -19,12 +16,6 @@ void MainScene::Start()
 
 	//Create GameObject
 	GameObject * triangle = Instatiate();
-
-	TerrainGeneration terrainGen;
-	Mesh *mesh = terrainGen.createTerrainMesh(500, 500, 5.0);
-	Model* model = new Model(mesh);
-	Renderer * renderer = new Renderer("./res/shader/diffuseShader", model);
-	triangle->AddComponent(renderer);
 	
 	Mesh *sphere = IcosphereGenerator::createIcosphere(glm::vec3(1), 1, glm::vec4(128.0f / 255.0f, 156.0f / 255.0f, 82.0f / 255.0f,1));
 	sphere->transformMesh(
@@ -33,14 +24,14 @@ void MainScene::Start()
 		glm::scale(glm::vec3(5,1,3))
 	);
 	Model* modelsphere = new Model(sphere);
-	renderer = new Renderer("./res/shader/diffuseShader", modelsphere);
+	Renderer* renderer = new Renderer("./res/shader/diffuseShader", modelsphere);
 	triangle->AddComponent(renderer);
 
 
 
 	triangle->transform.position = glm::vec3(0, -2, -10);
 	triangle->transform.scale = glm::vec3(0.5);
-	//triangle->AddComponent(new RotateObject());
+	triangle->AddComponent(new RotateObject());
 
 	triangle->AddComponent(new CameraMovement());
 

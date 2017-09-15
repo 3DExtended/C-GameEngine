@@ -159,7 +159,6 @@
     <ClCompile Include="src\Components\CameraMovement.cpp" />
     <ClCompile Include="src\Components\Misc\RotateObject.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\RunOnce\TerrainGeneration.cpp" />
     <ClCompile Include="src\Scenes\MainScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +170,6 @@
     <ClInclude Include="src\Components\CameraMovement.h" />
     <ClInclude Include="src\Components\Misc\RotateObject.h" />
     <ClInclude Include="src\Scenes\MainScene.h" />
-    <ClInclude Include="src\RunOnce\TerrainGeneration.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
