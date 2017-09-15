@@ -16,7 +16,7 @@ uniform mat4 pmatrix; //View * model
 
 void main(){
 
-	float diffuse = clamp(dot(normalize(vNormal), normalize(-vVertex)),0,1);
+	float diffuse = clamp(dot(normalize(vNormal), normalize(-vVertex)),0.15,1);
 
 	color = vec4(vColor.xyz * diffuse , vColor.a);
 }

@@ -21,7 +21,7 @@ void MainScene::Start()
 	GameObject * triangle = Instatiate();
 
 	TerrainGeneration terrainGen;
-	Mesh *mesh = terrainGen.createTerrainMesh(100, 100, 5.0);
+	Mesh *mesh = terrainGen.createTerrainMesh(500, 500, 5.0);
 	Model* model = new Model(mesh);
 	Renderer * renderer = new Renderer("./res/shader/diffuseShader", model);
 	triangle->AddComponent(renderer);
