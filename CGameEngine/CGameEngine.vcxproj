@@ -191,6 +191,9 @@
     <ClInclude Include="src\Engine\Util\AutoUnbind.h" />
     <ClInclude Include="src\Engine\Util\CmpStr.h" />
     <ClInclude Include="src\Engine\Util\Constants.h" />
+    <ClInclude Include="src\Engine\Util\Curve.h" />
+    <ClInclude Include="src\Engine\Util\Curves\ECurve.h" />
+    <ClInclude Include="src\Engine\Util\Curves\EMinusX.h" />
     <ClInclude Include="src\Engine\Util\FileSystem.h" />
     <ClInclude Include="src\Engine\Util\Generators\IcosphereGenerator.h" />
     <ClInclude Include="src\Engine\Util\Generators\PerlinNosie.h" />

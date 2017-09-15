@@ -22,3 +22,8 @@ glm::mat4 ENGINE::UTIL::shearMatrix(float a, float b, float c, float d, float e,
 
 	return res;
 }
+
+float ENGINE::UTIL::rand()
+{
+	return ((float)std::rand()/(float)RAND_MAX);
+}
