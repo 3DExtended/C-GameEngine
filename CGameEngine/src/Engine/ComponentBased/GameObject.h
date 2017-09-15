@@ -16,6 +16,9 @@ namespace ENGINE {
 		void AddComponent(Component* comp);
 
 		Transform transform;
+
+		void SetParent(GameObject* obj);
+		void AddChild(GameObject* obj);
 	private:
 		std::vector<Component*> components;
 
@@ -28,6 +31,9 @@ namespace ENGINE {
 		void Destroy();
 
 		const std::string name = "";
+
+		GameObject* parent = nullptr;
+		std::vector<GameObject*> childs = std::vector<GameObject*>();
 
 	private:
 		friend class Component;

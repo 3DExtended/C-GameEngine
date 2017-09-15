@@ -24,6 +24,10 @@ void GameObject::Awake()
 	for (Component* comp : components) {
 		comp->Awake();
 	}
+	for (GameObject* child : childs) {
+		child->Awake();
+	}
+
 	currentGameObject = nullptr;
 }
 
@@ -33,6 +37,9 @@ void GameObject::Start()
 
 	for (Component* comp : components) {
 		comp->Start();
+	}
+	for (GameObject* child : childs) {
+		child->Start();
 	}
 	currentGameObject = nullptr;
 
@@ -45,6 +52,9 @@ void GameObject::Update()
 	for (Component* comp : components) {
 		comp->Update();
 	}
+	for (GameObject* child : childs) {
+		child->Update();
+	}
 	currentGameObject = nullptr;
 
 }
@@ -56,6 +66,9 @@ void GameObject::LateUpdate()
 	for (Component* comp : components) {
 		comp->LateUpdate();
 	}
+	for (GameObject* child : childs) {
+		child->LateUpdate();
+	}
 	currentGameObject = nullptr;
 
 }
@@ -66,6 +79,9 @@ void GameObject::Render()
 
 	for (Component* comp : components) {
 		comp->Render();
+	}
+	for (GameObject* child : childs) {
+		child->Render();
 	}
 	currentGameObject = nullptr;
 
@@ -79,6 +95,9 @@ void GameObject::Destroy()
 	for (Component* comp : components) {
 		comp->Destroy();
 	}
+	for (GameObject* child : childs) {
+		child->Destroy();
+	}
 	currentGameObject = nullptr;
 
 }
@@ -86,4 +105,26 @@ void GameObject::Destroy()
 void GameObject::AddComponent(Component* comp)
 {
 	components.push_back(comp);
+}
+
+void ENGINE::GameObject::SetParent(GameObject * obj)
+{
+	if (this->parent != nullptr) {
+		std::cerr << "You are not supposed to have two parent!";
+	}
+	else {
+		this->parent = obj;
+		obj->AddChild(this);
+	}
+}
+
+void GameObject::AddChild(GameObject * obj)
+{
+	if (obj->parent != nullptr) {
+		std::cerr << "You are not supposed to have two parent!";
+	}
+	else {
+		childs.push_back(obj);
+		obj->SetParent(this);
+	}
 }
