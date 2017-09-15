@@ -85,7 +85,7 @@ void Mesh::transformMesh(glm::mat4 transformationMatrix)
 {
 	glm::mat4 normalMatrix = glm::transpose(glm::inverse(transformationMatrix));
 
-	for (int i = 0; i < point.size(); i+=12) {
+	for (unsigned int i = 0; i < point.size(); i+=12) {
 		//update positions
 		glm::vec4 pos(point[i + 0], point[i + 1], point[i + 2],1.0f);
 		pos = transformationMatrix * pos;

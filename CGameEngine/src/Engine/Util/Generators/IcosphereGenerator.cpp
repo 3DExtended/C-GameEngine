@@ -25,19 +25,19 @@ Mesh * IcosphereGenerator::createIcosphere(glm::vec3 size, unsigned int tesselat
 {
 	//create perfect round sphere and then scale it.
 	std::vector<glm::vec3> resVertices;
-	for (int i = 0; i < vertices.size(); i++) {
+	for (unsigned int i = 0; i < vertices.size(); i++) {
 		resVertices.push_back(vertices[i]);
 	}
 
 	std::vector<glm::i16vec3> faces;
-	for (int i = 0; i < triangles.size(); i++) {
+	for (unsigned int i = 0; i < triangles.size(); i++) {
 		faces.push_back(triangles[i]);
 	}
 
 	//subdivide faces
-	for (int i = 0; i < tesselationNumber; i++) {
+	for (unsigned int i = 0; i < tesselationNumber; i++) {
 		std::vector<glm::i16vec3> newFaces;
-		for (int j = 0; j < faces.size(); j++) {
+		for (unsigned int j = 0; j < faces.size(); j++) {
 			glm::i16vec3 face = faces[j];
 
 			int IDA = face.x;
@@ -67,7 +67,7 @@ Mesh * IcosphereGenerator::createIcosphere(glm::vec3 size, unsigned int tesselat
 
 		//transfer newfaces to faces
 		faces.clear();
-		for (int i = 0; i < newFaces.size(); i++) {
+		for (unsigned int i = 0; i < newFaces.size(); i++) {
 			faces.push_back(newFaces[i]);
 		}
 		newFaces.clear();
@@ -76,7 +76,7 @@ Mesh * IcosphereGenerator::createIcosphere(glm::vec3 size, unsigned int tesselat
 
 	//create mesh
 	Mesh * mesh = new Mesh();
-	for (int i = 0; i < faces.size(); i++) {
+	for (unsigned int i = 0; i < faces.size(); i++) {
 		glm::vec3 posA = resVertices[faces[i].x];
 		glm::vec3 posB = resVertices[faces[i].y];
 		glm::vec3 posC = resVertices[faces[i].z];

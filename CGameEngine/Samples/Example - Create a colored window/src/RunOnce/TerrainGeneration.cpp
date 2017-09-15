@@ -172,9 +172,9 @@ glm::vec4 TerrainGeneration::CalculateColor(glm::vec3 averagePos, glm::vec3 norm
 
 
 	const int numberOfColors = 3;
-	float thresholds[numberOfColors]{	-4.5,		//wet sand
-										-3,		//sand
-										1.45 };	//grass
+	float thresholds[numberOfColors]{	-4.5f,		//wet sand
+										-3.0f,		//sand
+										1.45f };	//grass
 
 	int i = 0;
 	while (i < numberOfColors && thresholds[i] < averagePos.y) {
@@ -205,7 +205,7 @@ glm::vec4 TerrainGeneration::CalculateColor(glm::vec3 averagePos, glm::vec3 norm
 		tempColor = glm::vec3((float)91 / 255.0f, (float)100 / 255.0f, (float)107 / 255.0f);//Rock
 	}
 
-	float dot = glm::dot(normal, glm::vec3(0, 1, 0)) + 1.0;
+	float dot = glm::dot(normal, glm::vec3(0, 1, 0)) + 1.0f;
 	dot /= -2.0;
 
 
