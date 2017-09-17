@@ -170,6 +170,7 @@
     <ClCompile Include="src\Engine\SceneHandler.cpp" />
     <ClCompile Include="src\Engine\Shader.cpp" />
     <ClCompile Include="src\Engine\Util\FileSystem.cpp" />
+    <ClCompile Include="src\Engine\Util\Generators\CylinderGenerator.cpp" />
     <ClCompile Include="src\Engine\Util\Generators\IcosphereGenerator.cpp" />
     <ClCompile Include="src\Engine\Util\Generators\PerlinNosie.cpp" />
     <ClCompile Include="src\Engine\Util\Math.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="src\Engine\Util\Curves\ECurve.h" />
     <ClInclude Include="src\Engine\Util\Curves\EMinusX.h" />
     <ClInclude Include="src\Engine\Util\FileSystem.h" />
+    <ClInclude Include="src\Engine\Util\Generators\CylinderGenerator.h" />
     <ClInclude Include="src\Engine\Util\Generators\IcosphereGenerator.h" />
     <ClInclude Include="src\Engine\Util\Generators\PerlinNosie.h" />
     <ClInclude Include="src\Engine\Util\Math.h" />

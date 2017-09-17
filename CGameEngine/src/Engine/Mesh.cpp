@@ -81,6 +81,37 @@ void Mesh::addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c)
 
 }
 
+void Mesh::addTriangleAndRecalcNormalsFlatShader(uint32_t a, uint32_t b, uint32_t c)
+{
+	index.push_back(a);
+	index.push_back(b);
+	index.push_back(c);
+
+
+	glm::vec3 posA = glm::vec3(point[a * 12 + 0], point[a * 12 + 1], point[a * 12 + 2]);
+	glm::vec3 posB = glm::vec3(point[b * 12 + 0], point[b * 12 + 1], point[b * 12 + 2]);
+	glm::vec3 posC = glm::vec3(point[c * 12 + 0], point[c * 12 + 1], point[c * 12 + 2]);
+
+	glm::vec3 u = posB - posA;
+	glm::vec3 v = posC - posA;
+	glm::vec3 normal = glm::normalize(glm::vec3(u.y * v.z - u.z * v.y, u.z*v.x - u.x*v.z, u.x*v.y - u.y*v.x));
+
+	point[a * 12 + 3] = normal.x;
+	point[a * 12 + 4] = normal.y;
+	point[a * 12 + 5] = normal.z;
+}
+
+void Mesh::addTriangleAndSetNormalFlatShader(uint32_t a, uint32_t b, uint32_t c, glm::vec3 normal)
+{
+	index.push_back(a);
+	index.push_back(b);
+	index.push_back(c);
+
+	point[a * 12 + 3] = normal.x;
+	point[a * 12 + 4] = normal.y;
+	point[a * 12 + 5] = normal.z;
+}
+
 void Mesh::transformMesh(glm::mat4 transformationMatrix)
 {
 	glm::mat4 normalMatrix = glm::transpose(glm::inverse(transformationMatrix));

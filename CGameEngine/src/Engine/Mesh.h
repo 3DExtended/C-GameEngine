@@ -22,6 +22,10 @@ namespace ENGINE {
 
 		void addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c);
 
+		void addTriangleAndRecalcNormalsFlatShader(uint32_t a, uint32_t b, uint32_t c);
+
+		void addTriangleAndSetNormalFlatShader(uint32_t a, uint32_t b, uint32_t c, glm::vec3 normal);
+
 		void transformMesh(glm::mat4 transformationMatrix);
 	private:
 		friend class Model;

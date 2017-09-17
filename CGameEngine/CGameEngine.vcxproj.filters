@@ -66,6 +66,9 @@
     <ClCompile Include="src\Engine\ComponentBased\Transform.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Util\Generators\CylinderGenerator.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">
@@ -138,6 +141,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\Curves\EMinusX.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\Generators\CylinderGenerator.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
