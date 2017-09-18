@@ -1,5 +1,4 @@
 #include "Mesh.h"
-
 #include <iostream>
 
 using namespace ENGINE;
@@ -57,7 +56,6 @@ void Mesh::addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c)
 	index.push_back(b);
 	index.push_back(c);
 
-
 	glm::vec3 posA = glm::vec3(point[a * 12 + 0], point[a * 12 + 1], point[a * 12 + 2]);
 	glm::vec3 posB = glm::vec3(point[b * 12 + 0], point[b * 12 + 1], point[b * 12 + 2]);
 	glm::vec3 posC = glm::vec3(point[c * 12 + 0], point[c * 12 + 1], point[c * 12 + 2]);
@@ -77,8 +75,6 @@ void Mesh::addTriangleAndRecalcNormals(uint32_t a, uint32_t b, uint32_t c)
 	point[c * 12 + 3] = normal.x;
 	point[c * 12 + 4] = normal.y;
 	point[c * 12 + 5] = normal.z;
-
-
 }
 
 void Mesh::addTriangleAndRecalcNormalsFlatShader(uint32_t a, uint32_t b, uint32_t c)
@@ -86,7 +82,6 @@ void Mesh::addTriangleAndRecalcNormalsFlatShader(uint32_t a, uint32_t b, uint32_
 	index.push_back(a);
 	index.push_back(b);
 	index.push_back(c);
-
 
 	glm::vec3 posA = glm::vec3(point[a * 12 + 0], point[a * 12 + 1], point[a * 12 + 2]);
 	glm::vec3 posB = glm::vec3(point[b * 12 + 0], point[b * 12 + 1], point[b * 12 + 2]);
@@ -130,8 +125,6 @@ void Mesh::transformMesh(glm::mat4 transformationMatrix)
 		point[i + 3] = normal.x;
 		point[i + 4] = normal.y;
 		point[i + 5] = normal.z;
-
-
 	}
 }
 
