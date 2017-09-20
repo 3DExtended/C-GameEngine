@@ -3,15 +3,20 @@
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
 
-Mesh * CylinderGenerator::createCylinder(float radius, unsigned int numberOfVerts,unsigned int numberOfHeightSections, float heightOfSection, glm::vec4 color)
+Mesh * CylinderGenerator::createCylinder(float radius, unsigned int numberOfVerts, unsigned int numberOfHeightSections, float heightOfSection, glm::vec4 color)
+{
+	return createCylinder(radius, radius, numberOfVerts, numberOfHeightSections, heightOfSection, color);
+}
+
+Mesh * CylinderGenerator::createCylinder(float radiusBase, float radiusTop, unsigned int numberOfVerts,unsigned int numberOfHeightSections, float heightOfSection, glm::vec4 color)
 {
 	Mesh* cylinder = new Mesh();
 
 	float angle = 360.0f / numberOfVerts;
 
 
-
 	for(unsigned int y = 0 ; y < numberOfHeightSections; y++){
+		float radius = radiusBase + (radiusTop - radiusBase) / (float)numberOfHeightSections * (float) y;
 		int id;
 		for (unsigned int i = 0; i < numberOfVerts; i++) {
 			

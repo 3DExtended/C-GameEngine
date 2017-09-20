@@ -27,6 +27,8 @@ namespace ENGINE {
 		void addTriangleAndSetNormalFlatShader(uint32_t a, uint32_t b, uint32_t c, glm::vec3 normal);
 
 		void transformMesh(glm::mat4 transformationMatrix);
+
+		void mergeMesh(Mesh* mesh);
 	private:
 		friend class Model;
 		std::vector<float> point;
