@@ -72,7 +72,7 @@ void Model::Render()
 
 	//disable things
 	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(0);
-	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
+	glDisableVertexAttribArray(3);
 }
