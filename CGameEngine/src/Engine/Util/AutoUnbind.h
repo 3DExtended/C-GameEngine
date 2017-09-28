@@ -16,3 +16,4 @@ namespace ENGINE {
 #define Bind(obj)\
 	((ENGINE::UTIL::AutoUnbind*)((obj)))->_bind();\
 	ENGINE::UTIL::ScopeWatch<ENGINE::UTIL::AutoUnbind> MAKE_UNIQUE(unbindWatch)((obj), &ENGINE::UTIL::AutoUnbind::_unbind)
+	

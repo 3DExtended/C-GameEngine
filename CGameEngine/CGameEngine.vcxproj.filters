@@ -51,9 +51,6 @@
     <ClCompile Include="src\Engine\ComponentBased\Component.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\Engine\Util\Generators\PerlinNosie.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="src\Engine\Input.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -70,6 +67,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Util\Util.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Util\Generators\PerlinNoise.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,9 +122,6 @@
     <ClInclude Include="src\Engine\ComponentBased\Transform.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\Util\Generators\PerlinNosie.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\Engine\Input.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -150,6 +147,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\Util.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\Generators\PerlinNoise.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

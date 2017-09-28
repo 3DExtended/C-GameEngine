@@ -123,32 +123,518 @@ engine/fast:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
-Engine/Util/main.obj: Engine/Util/main.cpp.obj
+Engine/Camera.obj: Engine/Camera.cpp.obj
 
-.PHONY : Engine/Util/main.obj
+.PHONY : Engine/Camera.obj
 
 # target to build an object file
-Engine/Util/main.cpp.obj:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/main.cpp.obj
-.PHONY : Engine/Util/main.cpp.obj
+Engine/Camera.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Camera.cpp.obj
+.PHONY : Engine/Camera.cpp.obj
 
-Engine/Util/main.i: Engine/Util/main.cpp.i
+Engine/Camera.i: Engine/Camera.cpp.i
 
-.PHONY : Engine/Util/main.i
+.PHONY : Engine/Camera.i
 
 # target to preprocess a source file
-Engine/Util/main.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/main.cpp.i
-.PHONY : Engine/Util/main.cpp.i
+Engine/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Camera.cpp.i
+.PHONY : Engine/Camera.cpp.i
 
-Engine/Util/main.s: Engine/Util/main.cpp.s
+Engine/Camera.s: Engine/Camera.cpp.s
 
-.PHONY : Engine/Util/main.s
+.PHONY : Engine/Camera.s
 
 # target to generate assembly for a file
-Engine/Util/main.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/main.cpp.s
-.PHONY : Engine/Util/main.cpp.s
+Engine/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Camera.cpp.s
+.PHONY : Engine/Camera.cpp.s
+
+Engine/ComponentBased/Component.obj: Engine/ComponentBased/Component.cpp.obj
+
+.PHONY : Engine/ComponentBased/Component.obj
+
+# target to build an object file
+Engine/ComponentBased/Component.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Component.cpp.obj
+.PHONY : Engine/ComponentBased/Component.cpp.obj
+
+Engine/ComponentBased/Component.i: Engine/ComponentBased/Component.cpp.i
+
+.PHONY : Engine/ComponentBased/Component.i
+
+# target to preprocess a source file
+Engine/ComponentBased/Component.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Component.cpp.i
+.PHONY : Engine/ComponentBased/Component.cpp.i
+
+Engine/ComponentBased/Component.s: Engine/ComponentBased/Component.cpp.s
+
+.PHONY : Engine/ComponentBased/Component.s
+
+# target to generate assembly for a file
+Engine/ComponentBased/Component.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Component.cpp.s
+.PHONY : Engine/ComponentBased/Component.cpp.s
+
+Engine/ComponentBased/GameObject.obj: Engine/ComponentBased/GameObject.cpp.obj
+
+.PHONY : Engine/ComponentBased/GameObject.obj
+
+# target to build an object file
+Engine/ComponentBased/GameObject.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/GameObject.cpp.obj
+.PHONY : Engine/ComponentBased/GameObject.cpp.obj
+
+Engine/ComponentBased/GameObject.i: Engine/ComponentBased/GameObject.cpp.i
+
+.PHONY : Engine/ComponentBased/GameObject.i
+
+# target to preprocess a source file
+Engine/ComponentBased/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/GameObject.cpp.i
+.PHONY : Engine/ComponentBased/GameObject.cpp.i
+
+Engine/ComponentBased/GameObject.s: Engine/ComponentBased/GameObject.cpp.s
+
+.PHONY : Engine/ComponentBased/GameObject.s
+
+# target to generate assembly for a file
+Engine/ComponentBased/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/GameObject.cpp.s
+.PHONY : Engine/ComponentBased/GameObject.cpp.s
+
+Engine/ComponentBased/Transform.obj: Engine/ComponentBased/Transform.cpp.obj
+
+.PHONY : Engine/ComponentBased/Transform.obj
+
+# target to build an object file
+Engine/ComponentBased/Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Transform.cpp.obj
+.PHONY : Engine/ComponentBased/Transform.cpp.obj
+
+Engine/ComponentBased/Transform.i: Engine/ComponentBased/Transform.cpp.i
+
+.PHONY : Engine/ComponentBased/Transform.i
+
+# target to preprocess a source file
+Engine/ComponentBased/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Transform.cpp.i
+.PHONY : Engine/ComponentBased/Transform.cpp.i
+
+Engine/ComponentBased/Transform.s: Engine/ComponentBased/Transform.cpp.s
+
+.PHONY : Engine/ComponentBased/Transform.s
+
+# target to generate assembly for a file
+Engine/ComponentBased/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/ComponentBased/Transform.cpp.s
+.PHONY : Engine/ComponentBased/Transform.cpp.s
+
+Engine/Components/Renderer.obj: Engine/Components/Renderer.cpp.obj
+
+.PHONY : Engine/Components/Renderer.obj
+
+# target to build an object file
+Engine/Components/Renderer.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Components/Renderer.cpp.obj
+.PHONY : Engine/Components/Renderer.cpp.obj
+
+Engine/Components/Renderer.i: Engine/Components/Renderer.cpp.i
+
+.PHONY : Engine/Components/Renderer.i
+
+# target to preprocess a source file
+Engine/Components/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Components/Renderer.cpp.i
+.PHONY : Engine/Components/Renderer.cpp.i
+
+Engine/Components/Renderer.s: Engine/Components/Renderer.cpp.s
+
+.PHONY : Engine/Components/Renderer.s
+
+# target to generate assembly for a file
+Engine/Components/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Components/Renderer.cpp.s
+.PHONY : Engine/Components/Renderer.cpp.s
+
+Engine/Display.obj: Engine/Display.cpp.obj
+
+.PHONY : Engine/Display.obj
+
+# target to build an object file
+Engine/Display.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Display.cpp.obj
+.PHONY : Engine/Display.cpp.obj
+
+Engine/Display.i: Engine/Display.cpp.i
+
+.PHONY : Engine/Display.i
+
+# target to preprocess a source file
+Engine/Display.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Display.cpp.i
+.PHONY : Engine/Display.cpp.i
+
+Engine/Display.s: Engine/Display.cpp.s
+
+.PHONY : Engine/Display.s
+
+# target to generate assembly for a file
+Engine/Display.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Display.cpp.s
+.PHONY : Engine/Display.cpp.s
+
+Engine/Engine.obj: Engine/Engine.cpp.obj
+
+.PHONY : Engine/Engine.obj
+
+# target to build an object file
+Engine/Engine.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Engine.cpp.obj
+.PHONY : Engine/Engine.cpp.obj
+
+Engine/Engine.i: Engine/Engine.cpp.i
+
+.PHONY : Engine/Engine.i
+
+# target to preprocess a source file
+Engine/Engine.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Engine.cpp.i
+.PHONY : Engine/Engine.cpp.i
+
+Engine/Engine.s: Engine/Engine.cpp.s
+
+.PHONY : Engine/Engine.s
+
+# target to generate assembly for a file
+Engine/Engine.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Engine.cpp.s
+.PHONY : Engine/Engine.cpp.s
+
+Engine/Input.obj: Engine/Input.cpp.obj
+
+.PHONY : Engine/Input.obj
+
+# target to build an object file
+Engine/Input.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Input.cpp.obj
+.PHONY : Engine/Input.cpp.obj
+
+Engine/Input.i: Engine/Input.cpp.i
+
+.PHONY : Engine/Input.i
+
+# target to preprocess a source file
+Engine/Input.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Input.cpp.i
+.PHONY : Engine/Input.cpp.i
+
+Engine/Input.s: Engine/Input.cpp.s
+
+.PHONY : Engine/Input.s
+
+# target to generate assembly for a file
+Engine/Input.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Input.cpp.s
+.PHONY : Engine/Input.cpp.s
+
+Engine/Mesh.obj: Engine/Mesh.cpp.obj
+
+.PHONY : Engine/Mesh.obj
+
+# target to build an object file
+Engine/Mesh.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Mesh.cpp.obj
+.PHONY : Engine/Mesh.cpp.obj
+
+Engine/Mesh.i: Engine/Mesh.cpp.i
+
+.PHONY : Engine/Mesh.i
+
+# target to preprocess a source file
+Engine/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Mesh.cpp.i
+.PHONY : Engine/Mesh.cpp.i
+
+Engine/Mesh.s: Engine/Mesh.cpp.s
+
+.PHONY : Engine/Mesh.s
+
+# target to generate assembly for a file
+Engine/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Mesh.cpp.s
+.PHONY : Engine/Mesh.cpp.s
+
+Engine/Model.obj: Engine/Model.cpp.obj
+
+.PHONY : Engine/Model.obj
+
+# target to build an object file
+Engine/Model.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Model.cpp.obj
+.PHONY : Engine/Model.cpp.obj
+
+Engine/Model.i: Engine/Model.cpp.i
+
+.PHONY : Engine/Model.i
+
+# target to preprocess a source file
+Engine/Model.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Model.cpp.i
+.PHONY : Engine/Model.cpp.i
+
+Engine/Model.s: Engine/Model.cpp.s
+
+.PHONY : Engine/Model.s
+
+# target to generate assembly for a file
+Engine/Model.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Model.cpp.s
+.PHONY : Engine/Model.cpp.s
+
+Engine/Scene.obj: Engine/Scene.cpp.obj
+
+.PHONY : Engine/Scene.obj
+
+# target to build an object file
+Engine/Scene.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Scene.cpp.obj
+.PHONY : Engine/Scene.cpp.obj
+
+Engine/Scene.i: Engine/Scene.cpp.i
+
+.PHONY : Engine/Scene.i
+
+# target to preprocess a source file
+Engine/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Scene.cpp.i
+.PHONY : Engine/Scene.cpp.i
+
+Engine/Scene.s: Engine/Scene.cpp.s
+
+.PHONY : Engine/Scene.s
+
+# target to generate assembly for a file
+Engine/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Scene.cpp.s
+.PHONY : Engine/Scene.cpp.s
+
+Engine/SceneHandler.obj: Engine/SceneHandler.cpp.obj
+
+.PHONY : Engine/SceneHandler.obj
+
+# target to build an object file
+Engine/SceneHandler.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/SceneHandler.cpp.obj
+.PHONY : Engine/SceneHandler.cpp.obj
+
+Engine/SceneHandler.i: Engine/SceneHandler.cpp.i
+
+.PHONY : Engine/SceneHandler.i
+
+# target to preprocess a source file
+Engine/SceneHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/SceneHandler.cpp.i
+.PHONY : Engine/SceneHandler.cpp.i
+
+Engine/SceneHandler.s: Engine/SceneHandler.cpp.s
+
+.PHONY : Engine/SceneHandler.s
+
+# target to generate assembly for a file
+Engine/SceneHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/SceneHandler.cpp.s
+.PHONY : Engine/SceneHandler.cpp.s
+
+Engine/Shader.obj: Engine/Shader.cpp.obj
+
+.PHONY : Engine/Shader.obj
+
+# target to build an object file
+Engine/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Shader.cpp.obj
+.PHONY : Engine/Shader.cpp.obj
+
+Engine/Shader.i: Engine/Shader.cpp.i
+
+.PHONY : Engine/Shader.i
+
+# target to preprocess a source file
+Engine/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Shader.cpp.i
+.PHONY : Engine/Shader.cpp.i
+
+Engine/Shader.s: Engine/Shader.cpp.s
+
+.PHONY : Engine/Shader.s
+
+# target to generate assembly for a file
+Engine/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Shader.cpp.s
+.PHONY : Engine/Shader.cpp.s
+
+Engine/Util/FileSystem.obj: Engine/Util/FileSystem.cpp.obj
+
+.PHONY : Engine/Util/FileSystem.obj
+
+# target to build an object file
+Engine/Util/FileSystem.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/FileSystem.cpp.obj
+.PHONY : Engine/Util/FileSystem.cpp.obj
+
+Engine/Util/FileSystem.i: Engine/Util/FileSystem.cpp.i
+
+.PHONY : Engine/Util/FileSystem.i
+
+# target to preprocess a source file
+Engine/Util/FileSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/FileSystem.cpp.i
+.PHONY : Engine/Util/FileSystem.cpp.i
+
+Engine/Util/FileSystem.s: Engine/Util/FileSystem.cpp.s
+
+.PHONY : Engine/Util/FileSystem.s
+
+# target to generate assembly for a file
+Engine/Util/FileSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/FileSystem.cpp.s
+.PHONY : Engine/Util/FileSystem.cpp.s
+
+Engine/Util/Generators/CylinderGenerator.obj: Engine/Util/Generators/CylinderGenerator.cpp.obj
+
+.PHONY : Engine/Util/Generators/CylinderGenerator.obj
+
+# target to build an object file
+Engine/Util/Generators/CylinderGenerator.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/CylinderGenerator.cpp.obj
+.PHONY : Engine/Util/Generators/CylinderGenerator.cpp.obj
+
+Engine/Util/Generators/CylinderGenerator.i: Engine/Util/Generators/CylinderGenerator.cpp.i
+
+.PHONY : Engine/Util/Generators/CylinderGenerator.i
+
+# target to preprocess a source file
+Engine/Util/Generators/CylinderGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/CylinderGenerator.cpp.i
+.PHONY : Engine/Util/Generators/CylinderGenerator.cpp.i
+
+Engine/Util/Generators/CylinderGenerator.s: Engine/Util/Generators/CylinderGenerator.cpp.s
+
+.PHONY : Engine/Util/Generators/CylinderGenerator.s
+
+# target to generate assembly for a file
+Engine/Util/Generators/CylinderGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/CylinderGenerator.cpp.s
+.PHONY : Engine/Util/Generators/CylinderGenerator.cpp.s
+
+Engine/Util/Generators/IcosphereGenerator.obj: Engine/Util/Generators/IcosphereGenerator.cpp.obj
+
+.PHONY : Engine/Util/Generators/IcosphereGenerator.obj
+
+# target to build an object file
+Engine/Util/Generators/IcosphereGenerator.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/IcosphereGenerator.cpp.obj
+.PHONY : Engine/Util/Generators/IcosphereGenerator.cpp.obj
+
+Engine/Util/Generators/IcosphereGenerator.i: Engine/Util/Generators/IcosphereGenerator.cpp.i
+
+.PHONY : Engine/Util/Generators/IcosphereGenerator.i
+
+# target to preprocess a source file
+Engine/Util/Generators/IcosphereGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/IcosphereGenerator.cpp.i
+.PHONY : Engine/Util/Generators/IcosphereGenerator.cpp.i
+
+Engine/Util/Generators/IcosphereGenerator.s: Engine/Util/Generators/IcosphereGenerator.cpp.s
+
+.PHONY : Engine/Util/Generators/IcosphereGenerator.s
+
+# target to generate assembly for a file
+Engine/Util/Generators/IcosphereGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/IcosphereGenerator.cpp.s
+.PHONY : Engine/Util/Generators/IcosphereGenerator.cpp.s
+
+Engine/Util/Generators/PerlinNoise.obj: Engine/Util/Generators/PerlinNoise.cpp.obj
+
+.PHONY : Engine/Util/Generators/PerlinNoise.obj
+
+# target to build an object file
+Engine/Util/Generators/PerlinNoise.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/PerlinNoise.cpp.obj
+.PHONY : Engine/Util/Generators/PerlinNoise.cpp.obj
+
+Engine/Util/Generators/PerlinNoise.i: Engine/Util/Generators/PerlinNoise.cpp.i
+
+.PHONY : Engine/Util/Generators/PerlinNoise.i
+
+# target to preprocess a source file
+Engine/Util/Generators/PerlinNoise.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/PerlinNoise.cpp.i
+.PHONY : Engine/Util/Generators/PerlinNoise.cpp.i
+
+Engine/Util/Generators/PerlinNoise.s: Engine/Util/Generators/PerlinNoise.cpp.s
+
+.PHONY : Engine/Util/Generators/PerlinNoise.s
+
+# target to generate assembly for a file
+Engine/Util/Generators/PerlinNoise.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Generators/PerlinNoise.cpp.s
+.PHONY : Engine/Util/Generators/PerlinNoise.cpp.s
+
+Engine/Util/Math.obj: Engine/Util/Math.cpp.obj
+
+.PHONY : Engine/Util/Math.obj
+
+# target to build an object file
+Engine/Util/Math.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Math.cpp.obj
+.PHONY : Engine/Util/Math.cpp.obj
+
+Engine/Util/Math.i: Engine/Util/Math.cpp.i
+
+.PHONY : Engine/Util/Math.i
+
+# target to preprocess a source file
+Engine/Util/Math.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Math.cpp.i
+.PHONY : Engine/Util/Math.cpp.i
+
+Engine/Util/Math.s: Engine/Util/Math.cpp.s
+
+.PHONY : Engine/Util/Math.s
+
+# target to generate assembly for a file
+Engine/Util/Math.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Math.cpp.s
+.PHONY : Engine/Util/Math.cpp.s
+
+Engine/Util/Util.obj: Engine/Util/Util.cpp.obj
+
+.PHONY : Engine/Util/Util.obj
+
+# target to build an object file
+Engine/Util/Util.cpp.obj:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Util.cpp.obj
+.PHONY : Engine/Util/Util.cpp.obj
+
+Engine/Util/Util.i: Engine/Util/Util.cpp.i
+
+.PHONY : Engine/Util/Util.i
+
+# target to preprocess a source file
+Engine/Util/Util.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Util.cpp.i
+.PHONY : Engine/Util/Util.cpp.i
+
+Engine/Util/Util.s: Engine/Util/Util.cpp.s
+
+.PHONY : Engine/Util/Util.s
+
+# target to generate assembly for a file
+Engine/Util/Util.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/Engine/Util/Util.cpp.s
+.PHONY : Engine/Util/Util.cpp.s
 
 # Help Target
 help:
@@ -159,9 +645,63 @@ help:
 	@echo "... engine"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Engine/Util/main.obj"
-	@echo "... Engine/Util/main.i"
-	@echo "... Engine/Util/main.s"
+	@echo "... Engine/Camera.obj"
+	@echo "... Engine/Camera.i"
+	@echo "... Engine/Camera.s"
+	@echo "... Engine/ComponentBased/Component.obj"
+	@echo "... Engine/ComponentBased/Component.i"
+	@echo "... Engine/ComponentBased/Component.s"
+	@echo "... Engine/ComponentBased/GameObject.obj"
+	@echo "... Engine/ComponentBased/GameObject.i"
+	@echo "... Engine/ComponentBased/GameObject.s"
+	@echo "... Engine/ComponentBased/Transform.obj"
+	@echo "... Engine/ComponentBased/Transform.i"
+	@echo "... Engine/ComponentBased/Transform.s"
+	@echo "... Engine/Components/Renderer.obj"
+	@echo "... Engine/Components/Renderer.i"
+	@echo "... Engine/Components/Renderer.s"
+	@echo "... Engine/Display.obj"
+	@echo "... Engine/Display.i"
+	@echo "... Engine/Display.s"
+	@echo "... Engine/Engine.obj"
+	@echo "... Engine/Engine.i"
+	@echo "... Engine/Engine.s"
+	@echo "... Engine/Input.obj"
+	@echo "... Engine/Input.i"
+	@echo "... Engine/Input.s"
+	@echo "... Engine/Mesh.obj"
+	@echo "... Engine/Mesh.i"
+	@echo "... Engine/Mesh.s"
+	@echo "... Engine/Model.obj"
+	@echo "... Engine/Model.i"
+	@echo "... Engine/Model.s"
+	@echo "... Engine/Scene.obj"
+	@echo "... Engine/Scene.i"
+	@echo "... Engine/Scene.s"
+	@echo "... Engine/SceneHandler.obj"
+	@echo "... Engine/SceneHandler.i"
+	@echo "... Engine/SceneHandler.s"
+	@echo "... Engine/Shader.obj"
+	@echo "... Engine/Shader.i"
+	@echo "... Engine/Shader.s"
+	@echo "... Engine/Util/FileSystem.obj"
+	@echo "... Engine/Util/FileSystem.i"
+	@echo "... Engine/Util/FileSystem.s"
+	@echo "... Engine/Util/Generators/CylinderGenerator.obj"
+	@echo "... Engine/Util/Generators/CylinderGenerator.i"
+	@echo "... Engine/Util/Generators/CylinderGenerator.s"
+	@echo "... Engine/Util/Generators/IcosphereGenerator.obj"
+	@echo "... Engine/Util/Generators/IcosphereGenerator.i"
+	@echo "... Engine/Util/Generators/IcosphereGenerator.s"
+	@echo "... Engine/Util/Generators/PerlinNoise.obj"
+	@echo "... Engine/Util/Generators/PerlinNoise.i"
+	@echo "... Engine/Util/Generators/PerlinNoise.s"
+	@echo "... Engine/Util/Math.obj"
+	@echo "... Engine/Util/Math.i"
+	@echo "... Engine/Util/Math.s"
+	@echo "... Engine/Util/Util.obj"
+	@echo "... Engine/Util/Util.i"
+	@echo "... Engine/Util/Util.s"
 .PHONY : help
 
 

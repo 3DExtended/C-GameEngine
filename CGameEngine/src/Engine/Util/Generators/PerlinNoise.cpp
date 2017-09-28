@@ -1,4 +1,4 @@
-#include "PerlinNosie.h"
+#include "PerlinNoise.h"
 #include <SDL2/SDL.h>
 using namespace ENGINE::UTIL;
 
