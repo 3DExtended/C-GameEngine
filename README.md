@@ -1,4 +1,5 @@
-# C-GameEngine
+# C-GameEngine ![Build status: ](https://travis-ci.org/3DExtended/C-GameEngine.svg?branch=master "Travis CI Test")
+
 
 This GameEngine is based on a tutorial series and is a great introduction for beginners to OpenGL since I teach the basic concepts.
 Following aspects can be learned:
