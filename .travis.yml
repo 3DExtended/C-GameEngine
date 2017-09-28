@@ -10,16 +10,16 @@ before_install:
   - sudo apt-get install libglu1-mesa-dev -y
   - sudo apt-get update -qq
   - sudo apt-get install unzip -y
-  - sudo apt-get install software-properties-common
-  - sudo add-apt-repository ppa:george-edison55/cmake-3.x
-  - sudo apt-get update
-  - sudo apt-get install cmake
-  - sudo apt-get upgrade
+  - sudo apt-get install software-properties-common -y
+  - sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
+  - sudo apt-get update -y
+  - sudo apt-get install cmake -y
+  - sudo apt-get upgrade -y
 install:
   - sudo apt-get install -qq libsdl2-dev libsdl2-image-dev gcc-6 g++-6 -y
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 90 -y
   - export GOPATH=$(pwd)
-  - go get -v github.com/veandco/go-sdl2/sdl
+  - go get -v github.com/veandco/go-sdl2/sdl -y
   - cd CGameEngine && mkdir Dependencies && cd Dependencies && mkdir include && cd include && wget https://github.com/g-truc/glm/archive/master.zip && unzip master.zip && cp -R glm-master/glm ./
   - wget https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.zip && unzip glew-2.1.0.zip && cp -R glew-2.1.0/include/GL ./
 before_script:
