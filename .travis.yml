@@ -27,6 +27,6 @@ before_script:
 script: 
   - ls
   - cd ../../ 
-  - cmake
-  - cd Builds
+  - cmake .
+  - cmake -G "Unix Makefiles"
   - make
