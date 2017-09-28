@@ -964,3 +964,4 @@ __pycache__/
 /CGameEngine/Builds/cmake_install.cmake
 /CGameEngine/Builds/libengine.a
 /CGameEngine/Builds/CMakeCache.txt
+/CGameEngine/Builds/Makefile
