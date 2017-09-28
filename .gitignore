@@ -965,3 +965,6 @@ __pycache__/
 /CGameEngine/Builds/libengine.a
 /CGameEngine/Builds/CMakeCache.txt
 /CGameEngine/Builds/Makefile
+/CGameEngine/Dependencies/include/glm/detail
+/CGameEngine/Dependencies/include/glm/ext
+/CGameEngine/Dependencies/include/glm/gtx

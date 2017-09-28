@@ -1,4 +1,5 @@
 #include "CylinderGenerator.h"
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/transform.hpp>
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
