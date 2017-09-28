@@ -5,16 +5,15 @@ compiler:
 before_install:
   - sudo add-apt-repository -y ppa:zoogie/sdl2-snapshots
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-  - sudo apt-get install build-essential
-  - sudo apt-get install mesa-common-dev
+  - sudo apt-get install build-essential -y
+  - sudo apt-get install mesa-common-dev -y
   - sudo apt-get install libglu1-mesa-dev -y
   - sudo apt-get update -qq
-  - sudo apt-get install unzip
+  - sudo apt-get install unzip -y
   - sudo cd CGameEngine && mkdir Dependencies && cd Dependencies && mkdir include && cd include && wget https://github.com/g-truc/glm/archive/master.zip && unzip master.zip && cp -R glm-master/glm ./
   - sudo wget https://sourceforge.net/projects/glew/files/glew/2.1.0/glew-2.1.0.zip && unzip glew-2.1.0.zip && cp -R glew-2.1.0/include/GL ./
-  - sudo apt-get install libglu1-mesa-dev
 install:
-  - sudo apt-get install -qq libsdl2-dev libsdl2-image-dev gcc-4.8 g++-4.8
+  - sudo apt-get install -qq libsdl2-dev libsdl2-image-dev gcc-4.8 g++-4.8 -y
   - export GOPATH=$(pwd)
   - go get -v github.com/veandco/go-sdl2/sdl
 before_script:
