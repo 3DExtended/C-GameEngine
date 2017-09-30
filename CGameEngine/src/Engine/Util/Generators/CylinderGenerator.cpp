@@ -16,7 +16,7 @@ Mesh * CylinderGenerator::createCylinder(float radiusBase, float radiusTop, unsi
 	float angle = 360.0f / numberOfVerts;
 
 
-	for(unsigned int y = 0 ; y < numberOfHeightSections; y++){
+	for(unsigned int y = 0 ; y <= numberOfHeightSections; y++){
 		float radius = radiusBase + (radiusTop - radiusBase) / (float)numberOfHeightSections * (float) y;
 		int id;
 		for (unsigned int i = 0; i < numberOfVerts; i++) {

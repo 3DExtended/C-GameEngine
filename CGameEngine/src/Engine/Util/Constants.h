@@ -1,2 +1,4 @@
 #pragma once
 #define PI    3.14159265358979323846264338327950288   /* pi */
+
+#define DEGREETORADIANS 0.0174533f

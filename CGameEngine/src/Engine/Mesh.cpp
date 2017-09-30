@@ -129,12 +129,16 @@ void Mesh::transformMesh(glm::mat4 transformationMatrix)
 }
 
 void Mesh::mergeMesh(Mesh* mesh) {
-	unsigned int indexSize = index.size();
+	unsigned int indexSize = point.size() / 12;
 
-	point.insert(point.end(), mesh->point.begin(), mesh->point.end());
+	for (unsigned int i = 0; i < mesh->point.size(); i++) {
+		auto tempVec = mesh->point[i];
+		point.push_back(tempVec);
+	}
 
 	for (unsigned int i = 0; i < mesh->index.size(); i++) {
 		index.push_back(mesh->index[i] + indexSize);
 	}
+
 
 }
