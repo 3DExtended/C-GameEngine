@@ -142,3 +142,70 @@ void Mesh::mergeMesh(Mesh* mesh) {
 
 
 }
+
+Mesh * ENGINE::Mesh::LoadObj(const std::string path)
+{
+	Mesh * res = new Mesh();
+
+
+	std::vector<glm::vec3> vertecies;
+	std::vector<glm::vec3> normal;
+	std::vector<glm::vec2> texture;
+	
+	//Load an obj file
+	std::ifstream fileStream(path.c_str(), std::ios::in);
+
+	if (fileStream.is_open()) {
+		std::string currentLine = "";
+		while (getline(fileStream, currentLine)) {
+			std::vector<std::string> parts = ENGINE::UTIL::splitString(currentLine, ' ');
+			if (parts.size() >= 1) {
+				if (parts[0].compare("vn") == 0) { //Normals
+					normal.push_back(glm::vec3(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3])));
+				}
+				else if (parts[0].compare("vt") == 0) {	//Texture Coords
+					texture.push_back(glm::vec2(std::stof(parts[1]), std::stof(parts[2])));
+				}
+				else if (parts[0].compare("v") == 0) {	//Vertex pos
+					vertecies.push_back(glm::vec3(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3])));
+				}
+				else if (parts[0].compare("f") == 0) {	//Vertex pos
+					// v vt vn
+					std::vector<std::string> subA = ENGINE::UTIL::splitString(parts[1], '/');
+					int a = res->addPoint(
+						vertecies[std::stoi(subA[0]) - 1],
+						normal[std::stoi(subA[2]) - 1],
+						texture[std::stoi(subA[1]) - 1],
+						glm::vec4(1, 1, 1, 1)
+					);
+
+					std::vector<std::string> subB = ENGINE::UTIL::splitString(parts[2], '/');
+					int b = res->addPoint(
+						vertecies[std::stoi(subB[0]) - 1],
+						normal[std::stoi(subB[2]) - 1],
+						texture[std::stoi(subB[1]) - 1],
+						glm::vec4(1, 1, 1, 1)
+					);
+
+					std::vector<std::string> subC = ENGINE::UTIL::splitString(parts[3], '/');
+					int c = res->addPoint(
+						vertecies[std::stoi(subC[0]) - 1],
+						normal[std::stoi(subC[2]) - 1],
+						texture[std::stoi(subC[1]) - 1],
+						glm::vec4(1, 1, 1, 1)
+					);
+
+					res->addTriangle(a,b,c);
+				}
+			}
+		}
+		fileStream.close();
+	}
+	else {
+		std::cout << "Impossible to open %s. Are you sure you are in the right directory?" << path << std::endl;
+		return nullptr;
+	}
+
+
+	return res;
+}

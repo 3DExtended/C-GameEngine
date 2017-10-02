@@ -1,7 +1,9 @@
 #pragma once
 #include <vector>
 #include "glm/glm.hpp"
-
+#include <fstream>
+#include <string>
+#include "Util/Util.h"
 namespace ENGINE {
 	class Mesh {
 	public:
@@ -29,6 +31,8 @@ namespace ENGINE {
 		void transformMesh(glm::mat4 transformationMatrix);
 
 		void mergeMesh(Mesh* mesh);
+
+		static Mesh* LoadObj(const std::string path);
 	private:
 		friend class Model;
 		std::vector<float> point;
