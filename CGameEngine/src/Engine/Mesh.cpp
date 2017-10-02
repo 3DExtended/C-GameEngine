@@ -146,17 +146,23 @@ void Mesh::mergeMesh(Mesh* mesh) {
 Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 {
 	Mesh * res = new Mesh();
-
+	std::size_t found = path.find(".obj");
+	if (found != std::string::npos) {
+		std::cerr << "Please use the path to the OBJ file without the obj file extension." << std::endl;
+		return nullptr;
+	}
 
 	std::vector<glm::vec3> vertecies;
 	std::vector<glm::vec3> normal;
 	std::vector<glm::vec2> texture;
+	std::vector<glm::vec4> colors = LoadMTLColors(path);
 	
 	//Load an obj file
-	std::ifstream fileStream(path.c_str(), std::ios::in);
+	std::ifstream fileStream((path + ".obj").c_str(), std::ios::in);
 
 	if (fileStream.is_open()) {
 		std::string currentLine = "";
+		int currentColor = -1;
 		while (getline(fileStream, currentLine)) {
 			std::vector<std::string> parts = ENGINE::UTIL::splitString(currentLine, ' ');
 			if (parts.size() >= 1) {
@@ -169,33 +175,44 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 				else if (parts[0].compare("v") == 0) {	//Vertex pos
 					vertecies.push_back(glm::vec3(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3])));
 				}
+				else if (parts[0].compare("g") == 0) {	//New object
+														//TODO this letter introduces a new Object (probably with a different material set). Handle it
+				}
+				else if (parts[0].compare("usemtl") == 0) {	//Set the material/color for the next faces
+					currentColor++;
+				}
 				else if (parts[0].compare("f") == 0) {	//Vertex pos
 					// v vt vn
 					std::vector<std::string> subA = ENGINE::UTIL::splitString(parts[1], '/');
 					int a = res->addPoint(
 						vertecies[std::stoi(subA[0]) - 1],
-						normal[std::stoi(subA[2]) - 1],
-						texture[std::stoi(subA[1]) - 1],
-						glm::vec4(1, 1, 1, 1)
+						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subA[2]) - 1],
+						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subA[1]) - 1], 
+						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
 					);
-
+					
 					std::vector<std::string> subB = ENGINE::UTIL::splitString(parts[2], '/');
 					int b = res->addPoint(
 						vertecies[std::stoi(subB[0]) - 1],
-						normal[std::stoi(subB[2]) - 1],
-						texture[std::stoi(subB[1]) - 1],
-						glm::vec4(1, 1, 1, 1)
+						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subB[2]) - 1],
+						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subB[1]) - 1],
+						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
 					);
 
 					std::vector<std::string> subC = ENGINE::UTIL::splitString(parts[3], '/');
 					int c = res->addPoint(
 						vertecies[std::stoi(subC[0]) - 1],
-						normal[std::stoi(subC[2]) - 1],
-						texture[std::stoi(subC[1]) - 1],
-						glm::vec4(1, 1, 1, 1)
+						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subC[2]) - 1],
+						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subC[1]) - 1],
+						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
 					);
 
-					res->addTriangle(a,b,c);
+					if (normal.size() == 0) {
+						res->addTriangleAndRecalcNormals(a, b, c);
+					}
+					else {
+						res->addTriangle(a,b,c);
+					}
 				}
 			}
 		}
@@ -208,4 +225,31 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 
 
 	return res;
+}
+
+std::vector<glm::vec4> ENGINE::Mesh::LoadMTLColors(const std::string path)
+{
+
+
+	std::vector<glm::vec4> colors;
+
+	ENGINE::UTIL::printCurrentWorkingDirectory();
+
+	//Load an obj file
+	std::ifstream fileStream((path + ".mtl").c_str(), std::ios::in);
+
+	if (fileStream.is_open()) {
+		std::string currentLine = "";
+		int currentColor = 0;
+		while (getline(fileStream, currentLine)) {
+			std::vector<std::string> parts = ENGINE::UTIL::splitString(currentLine, ' ');
+			if (parts.size() >= 1) {
+				if (parts[0].compare("Kd") == 0) { //reading the color value
+					colors.push_back(glm::vec4(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3]),1));
+				}
+			}
+		}
+	}
+
+	return colors;
 }

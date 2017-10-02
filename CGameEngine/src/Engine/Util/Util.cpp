@@ -8,6 +8,14 @@ void ENGINE::UTIL::splitString(const std::string &s, char delim, std::vector<std
 	}
 }
 
+void ENGINE::UTIL::printCurrentWorkingDirectory()
+{
+		char buffer[MAX_PATH];
+		GetModuleFileNameA(NULL, buffer, MAX_PATH);
+		std::string::size_type pos = std::string(buffer).find_last_of("\\/");
+		std::cout << std::string(buffer).substr(0, pos) << std::endl;
+}
+
 float ENGINE::UTIL::colorpartToOneRange(unsigned int cPart)
 {
 	return ((float)cPart)/255.0f;

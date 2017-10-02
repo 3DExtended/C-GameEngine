@@ -33,6 +33,7 @@ namespace ENGINE {
 		void mergeMesh(Mesh* mesh);
 
 		static Mesh* LoadObj(const std::string path);
+		static std::vector<glm::vec4> LoadMTLColors(const std::string path);
 	private:
 		friend class Model;
 		std::vector<float> point;
