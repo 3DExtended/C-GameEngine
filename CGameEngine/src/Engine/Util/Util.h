@@ -4,7 +4,6 @@
 #include <sstream>
 #include <string>
 #include <iostream>
-#include <windows.h>
 #include <string>
 #include <iostream>
 namespace ENGINE {
@@ -15,6 +14,5 @@ namespace ENGINE {
 		std::vector<std::string> splitString(const std::string &s, char delim);
 		void splitString(const std::string & s, char delim, std::vector<std::string>& elems);
 
-		void printCurrentWorkingDirectory();
 	}
 }

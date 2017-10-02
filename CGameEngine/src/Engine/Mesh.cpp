@@ -233,7 +233,6 @@ std::vector<glm::vec4> ENGINE::Mesh::LoadMTLColors(const std::string path)
 
 	std::vector<glm::vec4> colors;
 
-	ENGINE::UTIL::printCurrentWorkingDirectory();
 
 	//Load an obj file
 	std::ifstream fileStream((path + ".mtl").c_str(), std::ios::in);
