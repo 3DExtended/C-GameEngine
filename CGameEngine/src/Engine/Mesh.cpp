@@ -155,14 +155,14 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 	std::vector<glm::vec3> vertecies;
 	std::vector<glm::vec3> normal;
 	std::vector<glm::vec2> texture;
-	std::vector<glm::vec4> colors = LoadMTLColors(path);
+	std::map<std::string, glm::vec4> colors = LoadMTLColors(path);
 	
 	//Load an obj file
 	std::ifstream fileStream((path + ".obj").c_str(), std::ios::in);
 
 	if (fileStream.is_open()) {
 		std::string currentLine = "";
-		int currentColor = -1;
+		glm::vec4 currentColor;
 		while (getline(fileStream, currentLine)) {
 			std::vector<std::string> parts = ENGINE::UTIL::splitString(currentLine, ' ');
 			if (parts.size() >= 1) {
@@ -179,7 +179,8 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 														//TODO this letter introduces a new Object (probably with a different material set). Handle it
 				}
 				else if (parts[0].compare("usemtl") == 0) {	//Set the material/color for the next faces
-					currentColor++;
+					
+					currentColor = colors.find(parts[1])->second;;
 				}
 				else if (parts[0].compare("f") == 0) {	//Vertex pos
 					// v vt vn
@@ -188,7 +189,8 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 						vertecies[std::stoi(subA[0]) - 1],
 						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subA[2]) - 1],
 						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subA[1]) - 1], 
-						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
+						(colors.size() == 0) ? glm::vec4(1) : currentColor,
+						true
 					);
 					
 					std::vector<std::string> subB = ENGINE::UTIL::splitString(parts[2], '/');
@@ -196,7 +198,8 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 						vertecies[std::stoi(subB[0]) - 1],
 						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subB[2]) - 1],
 						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subB[1]) - 1],
-						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
+						(colors.size() == 0) ? glm::vec4(1) : currentColor,
+						true
 					);
 
 					std::vector<std::string> subC = ENGINE::UTIL::splitString(parts[3], '/');
@@ -204,7 +207,8 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 						vertecies[std::stoi(subC[0]) - 1],
 						(normal.size() == 0) ? glm::vec3(0) : normal[std::stoi(subC[2]) - 1],
 						(texture.size() == 0) ? glm::vec2(0) : texture[std::stoi(subC[1]) - 1],
-						(colors.size() == 0) ? glm::vec4(1) : colors[currentColor]
+						(colors.size() == 0) ? glm::vec4(1) : currentColor,
+						true
 					);
 
 					if (normal.size() == 0) {
@@ -227,11 +231,11 @@ Mesh * ENGINE::Mesh::LoadObj(const std::string path)
 	return res;
 }
 
-std::vector<glm::vec4> ENGINE::Mesh::LoadMTLColors(const std::string path)
+std::map<std::string, glm::vec4> ENGINE::Mesh::LoadMTLColors(const std::string path)
 {
 
 
-	std::vector<glm::vec4> colors;
+	std::map<std::string, glm::vec4> colors;
 
 
 	//Load an obj file
@@ -239,12 +243,16 @@ std::vector<glm::vec4> ENGINE::Mesh::LoadMTLColors(const std::string path)
 
 	if (fileStream.is_open()) {
 		std::string currentLine = "";
+		std::string currentName = "";
 		int currentColor = 0;
 		while (getline(fileStream, currentLine)) {
 			std::vector<std::string> parts = ENGINE::UTIL::splitString(currentLine, ' ');
 			if (parts.size() >= 1) {
+				if (parts[0].compare("newmtl") == 0) {
+					currentName = parts[1];
+				}else
 				if (parts[0].compare("Kd") == 0) { //reading the color value
-					colors.push_back(glm::vec4(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3]),1));
+					colors.insert(std::pair<std::string, glm::vec4>(currentName,glm::vec4(std::stof(parts[1]), std::stof(parts[2]), std::stof(parts[3]),1)));
 				}
 			}
 		}

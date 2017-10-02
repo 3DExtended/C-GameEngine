@@ -4,6 +4,8 @@
 #include <fstream>
 #include <string>
 #include "Util/Util.h"
+#include <map>
+
 namespace ENGINE {
 	class Mesh {
 	public:
@@ -33,8 +35,8 @@ namespace ENGINE {
 		void mergeMesh(Mesh* mesh);
 
 		static Mesh* LoadObj(const std::string path);
-		static std::vector<glm::vec4> LoadMTLColors(const std::string path);
 	private:
+		static std::map<std::string, glm::vec4> LoadMTLColors(const std::string path);
 		friend class Model;
 		std::vector<float> point;
 
