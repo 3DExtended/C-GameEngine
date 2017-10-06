@@ -1,0 +1,43 @@
+#include "MainScene.h"
+#include "Engine/Util/Generators/IcosphereGenerator.h"
+#include <glm/gtx/transform2.hpp>
+#include "Engine/Util/Math.h"
+
+void MainScene::LoadShaders()
+{
+	Shader *shader = new Shader("./res/shader/diffuseShader");
+}
+
+void MainScene::Start()
+{
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+	//Create GameObject
+	GameObject * triangle = Instatiate();
+	
+	Mesh *sphere = IcosphereGenerator::createIcosphere(glm::vec3(1), 1, glm::vec4(128.0f / 255.0f, 156.0f / 255.0f, 82.0f / 255.0f,1));
+	sphere->transformMesh(
+		glm::translate(glm::vec3(0, 5, 0))*
+		//UTIL::shearMatrix(0,-1,0,-1,0,1)
+		glm::scale(glm::vec3(5,1,3))
+	);
+	Model* modelsphere = new Model(sphere);
+	Renderer* renderer = new Renderer("./res/shader/diffuseShader", modelsphere);
+	triangle->AddComponent(renderer);
+
+
+
+	triangle->transform.position = glm::vec3(0, -2, -10);
+	triangle->transform.scale = glm::vec3(0.5);
+
+}
+
+void MainScene::Update()
+{
+
+}
+
+void MainScene::Destroy()
+{
+
+}
