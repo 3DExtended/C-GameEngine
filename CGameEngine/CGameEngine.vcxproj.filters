@@ -72,6 +72,18 @@
     <ClCompile Include="src\Engine\Util\Generators\PerlinNoise.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\GUI\FontHandler.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\GUI\GUIRenderer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Util\lodepng.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Texture.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">
@@ -150,6 +162,24 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\Generators\PerlinNoise.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\GUI\FontHandler.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\GUI\GUIRenderer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\GUI\Text.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\GUI\GUIElement.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\lodepng.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Texture.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
