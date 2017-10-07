@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
 #include "GUIElement.h"
+#include "../Util/Rect.h"
+class FontHandler;
 class Text{
 public:
-	void AddText(std::string appendText);
-	void Substring(unsigned int start, unsigned int size);
+	void AppendText(std::string appendText);
 	std::string GetString() const{ return text; }
 
 	void SetDepth(float val) {
@@ -18,20 +19,28 @@ public:
 
 	float GetDepth() { return depth; }
 
-	bool Text::operator <(const Text &b) const {
+	void SetTextsize(float size);
+
+	bool operator <(const Text &b) const {
 		return this->depth < b.depth;
 	}
 
+	~Text();
+
 private:
 	friend class FontHandler;
-	Text(std::string text);
+	Text(std::string text, FontHandler* fontHandler);
 
 	/// <summary>
 	/// The depth value is used to order each GUI element to avoid transperency problems.
 	/// The higher the number, the further away from the camera the GUIElement will be rendered.
 	/// </summary>
 	float depth = 0;
+
+	Rect* rect = new Rect(0,0,800,600);
+
+	float textHeightInPixel = 12.0f;
 private:
 	std::string text;
-
+	FontHandler* fontHandler = nullptr;
 };

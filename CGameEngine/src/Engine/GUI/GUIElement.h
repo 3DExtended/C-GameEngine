@@ -11,7 +11,7 @@ public:
 
 	float GetDepth() { return depth; }
 
-	bool GUIElement::operator <(const GUIElement &b) const {
+	bool operator <(const GUIElement &b) const {
 		return this->depth < b.depth;
 	}
 

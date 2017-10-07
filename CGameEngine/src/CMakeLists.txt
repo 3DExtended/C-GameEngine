@@ -11,9 +11,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Engine/Util/Curves)
 
 #add every cpp file to this line
 add_library(engine STATIC 
-	Engine/Util/Util.cpp 
-	Engine/Util/Math.cpp 
 	Engine/Util/FileSystem.cpp 
+	Engine/Util/lodepng.cpp 
+	Engine/Util/Math.cpp 
+	Engine/Util/Rect.cpp 
+	Engine/Util/Util.cpp 
 	Engine/Util/Generators/CylinderGenerator.cpp
 	Engine/Util/Generators/IcosphereGenerator.cpp
 	Engine/Util/Generators/PerlinNoise.cpp
@@ -26,10 +28,14 @@ add_library(engine STATIC
 	Engine/Scene.cpp
 	Engine/SceneHandler.cpp
 	Engine/Shader.cpp
+	Engine/Texture.cpp
 	Engine/Components/Renderer.cpp
 	Engine/ComponentBased/Component.cpp
 	Engine/ComponentBased/GameObject.cpp
 	Engine/ComponentBased/Transform.cpp
+	Engine/GUI/FontHandler.cpp
+	Engine/GUI/GUIRenderer.cpp
+	Engine/GUI/Text.cpp
 )
 
 target_link_libraries(engine lib)

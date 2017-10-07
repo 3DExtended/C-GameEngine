@@ -165,6 +165,7 @@
     <ClCompile Include="src\Engine\Engine.cpp" />
     <ClCompile Include="src\Engine\GUI\FontHandler.cpp" />
     <ClCompile Include="src\Engine\GUI\GUIRenderer.cpp" />
+    <ClCompile Include="src\Engine\GUI\Text.cpp" />
     <ClCompile Include="src\Engine\Input.cpp" />
     <ClCompile Include="src\Engine\Mesh.cpp" />
     <ClCompile Include="src\Engine\Model.cpp" />
@@ -178,6 +179,7 @@
     <ClCompile Include="src\Engine\Util\Generators\PerlinNoise.cpp" />
     <ClCompile Include="src\Engine\Util\lodepng.cpp" />
     <ClCompile Include="src\Engine\Util\Math.cpp" />
+    <ClCompile Include="src\Engine\Util\Rect.cpp" />
     <ClCompile Include="src\Engine\Util\Util.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +213,7 @@
     <ClInclude Include="src\Engine\Util\Generators\PerlinNoise.h" />
     <ClInclude Include="src\Engine\Util\lodepng.h" />
     <ClInclude Include="src\Engine\Util\Math.h" />
+    <ClInclude Include="src\Engine\Util\Rect.h" />
     <ClInclude Include="src\Engine\Util\ScopeWatch.h" />
     <ClInclude Include="src\Engine\Util\Util.h" />
   </ItemGroup>

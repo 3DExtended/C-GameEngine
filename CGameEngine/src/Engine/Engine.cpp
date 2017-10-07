@@ -5,7 +5,7 @@
 #include "Shader.h"
 #include "SceneHandler.h"
 #include "Input.h"
-
+#include "GUI/FontHandler.h"
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
 
@@ -58,6 +58,9 @@ void ENGINE::EngineClass::RunEngine(int indexOfStartScene)
 	
 		//Render Game
 		sceneHandler->Render();
+
+		//render text
+		FontHandler::RenderAllFonts();
 
 		//swap buffer
 		display->SwapBuffer();

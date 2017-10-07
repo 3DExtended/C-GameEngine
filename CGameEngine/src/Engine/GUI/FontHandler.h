@@ -12,14 +12,16 @@
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
 class FontHandler {
-	static void RenderAllFonts();
-	FontHandler(const std::string pathToFontFile, const std::string shaderPath);
+public:
 	~FontHandler();
-
+	static FontHandler* GetFontHandler(const std::string pathToFontFiles, const std::string shaderPath);
 
 	Text* AddText(std::string str);
 
+	Text * AddText(std::string str, float depth);
 
+
+	static void RenderAllFonts();
 private:
 	/// <summary>
 	/// A helper class which symbols the a char from a font file
@@ -64,13 +66,16 @@ private:
 private:
 	static std::vector<FontHandler*> fonts;
 
+	FontHandler(const std::string pathToFontFile, const std::string shaderPath);
+	void InsertText(Text *);
+
 	void Render();
 
-	GLuint vbo, vao;
+
+	GLuint vbo = 0, vao = 0;
 	unsigned int totalCharNumber = 0;
 
 
-	bool rebuild = false;
 
 	Character* characters[256];
 
@@ -79,4 +84,12 @@ private:
 
 	std::vector<Text*> texts;
 
+	void AddQuadsForText(Text * txt);
+
+	std::vector<float> vertexData;
+
+private:
+	friend class Text;
+	bool rebuild = false;
 };
+
