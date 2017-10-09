@@ -1,6 +1,8 @@
 #include "FontHandler.h"
 #include "GUIRenderer.h"
 
+using namespace ENGINE::GUI;
+
 std::vector<FontHandler*> FontHandler::fonts = std::vector<FontHandler*>();
 
 float getXOpenGL(float pixelValue)

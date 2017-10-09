@@ -8,6 +8,7 @@
 #include "GUI/FontHandler.h"
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
+using namespace ENGINE::GUI;
 
 void ENGINE::EngineClass::RunEngine(int indexOfStartScene)
 {

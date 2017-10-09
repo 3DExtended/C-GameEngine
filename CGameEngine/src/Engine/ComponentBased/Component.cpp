@@ -9,9 +9,6 @@
 
 using namespace ENGINE;
 
-Component::Component() {
-}
-
 Scene * Component::GetCurrentScene() {
 	return SceneHandler::getInstance()->GetCurrentScene();
 }

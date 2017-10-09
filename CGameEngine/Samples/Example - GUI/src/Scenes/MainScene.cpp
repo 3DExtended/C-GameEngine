@@ -4,6 +4,7 @@
 #include "Engine/Util/Math.h"
 #include "Engine/GUI/FontHandler.h"
 
+using namespace ENGINE::GUI;
 void MainScene::LoadShaders()
 {
 	Shader *shader = new Shader("./res/shader/diffuseShader");

@@ -3,25 +3,28 @@
 #include <algorithm>
 #include <GL/glew.h>
 
+namespace ENGINE {
+	namespace GUI {
+		class GUIElement;
+		class GUIRenderer {
+		public:
+			static GUIRenderer* GetInstance();
+			void Render();
 
-class GUIElement;
-class GUIRenderer {
-public:
-	static GUIRenderer* GetInstance();
-	void Render();
+		private:
+			static GUIRenderer* instance;
+			GUIRenderer();
 
-private:
-	static GUIRenderer* instance;
-	GUIRenderer();
+			std::vector<GUIElement*> elements;
 
-	std::vector<GUIElement*> elements;
-
-	GLuint vao, vbo;
+			GLuint vao, vbo;
 
 
 
-private:
-	friend class GUIElement;
-	void RegisterGUIElement(GUIElement* element);
-	void UnregisterGUIElement(GUIElement* element);
-};
+		private:
+			friend class GUIElement;
+			void RegisterGUIElement(GUIElement* element);
+			void UnregisterGUIElement(GUIElement* element);
+		};
+	}
+}

@@ -1,4 +1,6 @@
 #include "GUIRenderer.h"
+using namespace ENGINE::GUI;
+
 GUIRenderer* GUIRenderer::instance = nullptr;
 
 GUIRenderer * GUIRenderer::GetInstance() { 
