@@ -13,7 +13,7 @@ Text* text;
 void MainScene::Start()
 {
 	//Create GameObject
-	FontHandler * font = FontHandler::GetFontHandler("./res/font/Candara", "./res/shader/text");
+	FontHandler * font = FontHandler::GetFontHandler("./res/font/Arial Font", "./res/shader/text");
 	text = font->AddText("Huhu");
 }
 
@@ -21,8 +21,8 @@ float size = 1;
 void MainScene::Update()
 {
 	size++;
-	if (size >= 100)
-		size = 1;
+	if (size >= 500)
+		size = 400;
 	text->SetTextsize(size);
 }
 

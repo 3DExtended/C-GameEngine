@@ -17,12 +17,12 @@ void main(){
 
 	//color = texture(tex,uvs);
 
-	color = vec4(1,1,1,alpha);
+	//color = vec4(1,1,1,alpha);
 
 
-//	if(texture(tex,uvs).a < 0.5)
-	//	discard;
-//	else
-	//	color = vec4(1,1,1,1);
+	if(texture(tex,uvs).a < 0.5)
+		discard;
+	else
+		color = vec4(1,1,1,1);
 	
 }
