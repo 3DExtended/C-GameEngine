@@ -16,6 +16,7 @@ namespace ENGINE {
 	/// The implementation supports only "*.png" files.
 	/// Use the SetActivationSlot(...) to set which texture slot you wanna use (GL_TEXTUREi, where i ranges from 0 to (GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS - 1)).
 	/// </summary>
+	/// <example>
 	/// <code>
 	///	... //e.g. load texture 
 	///	{
@@ -26,6 +27,7 @@ namespace ENGINE {
 	///		... //Render stuff
 	///	} // Texture and Shader are unbound automatically
     /// </code>
+    /// </example>
 	class Texture :public AutoUnbind {
 	public:
 		/// <summary>

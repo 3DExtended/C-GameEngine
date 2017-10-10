@@ -18,10 +18,6 @@ GameObject::GameObject(const std::string name)
 	transform.gameObject = this;
 }
 
-GameObject::~GameObject()
-{
-}
-
 void GameObject::Awake()
 {
 	currentGameObject = this;

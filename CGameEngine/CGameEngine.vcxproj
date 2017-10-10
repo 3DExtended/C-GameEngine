@@ -102,6 +102,9 @@
       <AdditionalLibraryDirectories>.\Dependencies\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>Powershell.exe -ExecutionPolicy Unrestricted -file "$(ProjectDir)xmldoc2md.ps1" -xml "$(TargetDir)CGameEngine.xml" -xsl "$(ProjectDir)xmldoc2md.xsl" -output "$(SolutionDir)..\documentaion.md"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -138,6 +141,9 @@
       <AdditionalLibraryDirectories>.\Dependencies\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2test.lib;glew32.lib;glew32s.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>Powershell.exe -ExecutionPolicy Unrestricted -file "$(ProjectDir)xmldoc2md.ps1" -xml "$(TargetDir)CGameEngine.xml" -xsl "$(ProjectDir)xmldoc2md.xsl" -output "$(SolutionDir)..\documentaion.md"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
