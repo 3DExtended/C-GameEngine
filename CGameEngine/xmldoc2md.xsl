@@ -14,7 +14,7 @@ URL: http://github.com/jaime-olivares/xmldoc2md
   <!-- Assembly template -->
   <xsl:template match="assembly">
     <xsl:text># </xsl:text>
-    <xsl:value-of select="name"/>
+    <xsl:value-of select="translate(., '&quot;&#xA;', '')"/>
     <xsl:text>&#10;</xsl:text>
     <xsl:apply-templates select="//member[contains(@name,'T:')]"/>
   </xsl:template>
