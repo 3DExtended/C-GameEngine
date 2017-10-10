@@ -36,7 +36,7 @@ GameObject * ENGINE::Component::Instantiate()
 	return GetCurrentScene()->Instatiate();
 }
 
-GameObject * ENGINE::Component::Instantiate(const std::string name)
+GameObject * ENGINE::Component::Instantiate(std::string name)
 {
 	return GetCurrentScene()->Instatiate();
 }

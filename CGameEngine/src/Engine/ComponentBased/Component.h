@@ -51,7 +51,7 @@ namespace ENGINE {
 		/// </summary>
 		/// <param name="name">The name for the new GameObject</param>
 		/// <returns>A pointer to the empty gameObject with the name.</returns>
-		GameObject * Instantiate(const std::string name);
+		GameObject * Instantiate(std::string name);
 
 		/// <summary>
 		/// Can be used to en-/disable the mouse pointer while the mouse is hovering over the window opened by the Game-Engine.

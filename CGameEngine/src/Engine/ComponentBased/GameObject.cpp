@@ -11,7 +11,7 @@ GameObject::GameObject()
 	transform.gameObject = this;
 }
 
-GameObject::GameObject(const std::string name)
+GameObject::GameObject(std::string name)
 	:name(name)
 {
 	transform = Transform();

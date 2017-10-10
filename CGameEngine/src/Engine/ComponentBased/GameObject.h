@@ -32,7 +32,7 @@ namespace ENGINE {
 		/// <remarks>
 		/// Note that it is strongly advised to create a GameObject using the Instantiate() method offered by the Scene or the component class.
 		/// </remarks>
-		GameObject(const std::string name);
+		GameObject(std::string name);
 
 		/// <summary>
 		/// This method is used to assign a component to the GameObject. 
