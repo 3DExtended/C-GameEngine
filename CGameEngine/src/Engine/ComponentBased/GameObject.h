@@ -3,11 +3,7 @@
 #include <string>
 #include "Transform.h"
 #include "Component.h"
-
 namespace ENGINE {
-	/// <summary>
-	/// 
-	/// </summary>
 	class GameObject {
 	public:
 		GameObject();

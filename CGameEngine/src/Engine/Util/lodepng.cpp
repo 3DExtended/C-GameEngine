@@ -2773,7 +2773,7 @@ static unsigned LodePNGUnknownChunks_copy(LodePNGInfo* dest, const LodePNGInfo* 
 	return 0;
 }
 
-/******************************************************************************/
+
 
 static void LodePNGText_init(LodePNGInfo* info)
 {
@@ -2836,7 +2836,7 @@ unsigned lodepng_add_text(LodePNGInfo* info, const char* key, const char* str)
 	return 0;
 }
 
-/******************************************************************************/
+
 
 static void LodePNGIText_init(LodePNGInfo* info)
 {

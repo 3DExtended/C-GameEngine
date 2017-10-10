@@ -14,19 +14,18 @@ namespace ENGINE {
 	/// <summary>
 	/// This class is a wrapper for using textures. 
 	/// The implementation supports only "*.png" files.
-	/// To use this wrapper:
-	///		
-	///		... //e.g. load texture 
-	///		{
-	///			Bind(shader);
-	///			Bind(texture);
-	///			//bind sampler to shader location
-	///			glUniform1i(shader->getUniform("tex"), 0);	//only when the Sampler2D in the shader source code is called "tex"
-	///			... //Render stuff
-	///		} // Texture and Shader are unbound automatically
-	/// 
 	/// Use the SetActivationSlot(...) to set which texture slot you wanna use (GL_TEXTUREi, where i ranges from 0 to (GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS - 1)).
 	/// </summary>
+	/// <code>
+	///	... //e.g. load texture 
+	///	{
+	///		Bind(shader);
+	///		Bind(texture);
+	///		//bind sampler to shader location
+	///		glUniform1i(shader->getUniform("tex"), 0);	//only when the Sampler2D in the shader source code is called "tex"
+	///		... //Render stuff
+	///	} // Texture and Shader are unbound automatically
+    /// </code>
 	class Texture :public AutoUnbind {
 	public:
 		/// <summary>
@@ -56,7 +55,7 @@ namespace ENGINE {
 
 		//The texture handle needed for the texture
 		GLuint textureID;
-
+		
 		//The slot set by SetActivationSlot(...)
 		unsigned int numberOfTexture = GL_TEXTURE0;
 

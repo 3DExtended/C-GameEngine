@@ -183,7 +183,7 @@ namespace ENGINE {
 										   *   LESS-THAN SIGN and GREATER-THAN SIGN
 										   *   in a Swiss German, German, or French
 										   *   layout. */
-			SCANCODE_APPLICATION = 101, /**< windows contextual menu, compose */
+			SCANCODE_APPLICATION = 101, 
 			SCANCODE_POWER = 102, /**< The USB document says this is a status flag,
 								  *   not a physical key - but some Mac keyboards
 								  *   do have a power key. */
@@ -205,7 +205,7 @@ namespace ENGINE {
 			SCANCODE_MENU = 118,
 			SCANCODE_SELECT = 119,
 			SCANCODE_STOP = 120,
-			SCANCODE_AGAIN = 121,   /**< redo */
+			SCANCODE_AGAIN = 121,   
 			SCANCODE_UNDO = 122,
 			SCANCODE_CUT = 123,
 			SCANCODE_COPY = 124,
@@ -224,24 +224,24 @@ namespace ENGINE {
 			SCANCODE_INTERNATIONAL1 = 135, /**< used on Asian keyboards, see
 										   footnotes in USB doc */
 			SCANCODE_INTERNATIONAL2 = 136,
-			SCANCODE_INTERNATIONAL3 = 137, /**< Yen */
+			SCANCODE_INTERNATIONAL3 = 137, 
 			SCANCODE_INTERNATIONAL4 = 138,
 			SCANCODE_INTERNATIONAL5 = 139,
 			SCANCODE_INTERNATIONAL6 = 140,
 			SCANCODE_INTERNATIONAL7 = 141,
 			SCANCODE_INTERNATIONAL8 = 142,
 			SCANCODE_INTERNATIONAL9 = 143,
-			SCANCODE_LANG1 = 144, /**< Hangul/English toggle */
-			SCANCODE_LANG2 = 145, /**< Hanja conversion */
-			SCANCODE_LANG3 = 146, /**< Katakana */
-			SCANCODE_LANG4 = 147, /**< Hiragana */
-			SCANCODE_LANG5 = 148, /**< Zenkaku/Hankaku */
-			SCANCODE_LANG6 = 149, /**< reserved */
-			SCANCODE_LANG7 = 150, /**< reserved */
-			SCANCODE_LANG8 = 151, /**< reserved */
-			SCANCODE_LANG9 = 152, /**< reserved */
+			SCANCODE_LANG1 = 144, 
+			SCANCODE_LANG2 = 145, 
+			SCANCODE_LANG3 = 146, 
+			SCANCODE_LANG4 = 147, 
+			SCANCODE_LANG5 = 148, 
+			SCANCODE_LANG6 = 149, 
+			SCANCODE_LANG7 = 150, 
+			SCANCODE_LANG8 = 151, 
+			SCANCODE_LANG9 = 152, 
 
-			SCANCODE_ALTERASE = 153, /**< Erase-Eaze */
+			SCANCODE_ALTERASE = 153, 
 			SCANCODE_SYSREQ = 154,
 			SCANCODE_CANCEL = 155,
 			SCANCODE_CLEAR = 156,
@@ -303,12 +303,12 @@ namespace ENGINE {
 
 			SCANCODE_LCTRL = 224,
 			SCANCODE_LSHIFT = 225,
-			SCANCODE_LALT = 226, /**< alt, option */
-			SCANCODE_LGUI = 227, /**< windows, command (apple), meta */
+			SCANCODE_LALT = 226, 
+			SCANCODE_LGUI = 227, 
 			SCANCODE_RCTRL = 228,
 			SCANCODE_RSHIFT = 229,
-			SCANCODE_RALT = 230, /**< alt gr, option */
-			SCANCODE_RGUI = 231, /**< windows, command (apple), meta */
+			SCANCODE_RALT = 230, 
+			SCANCODE_RGUI = 231, 
 
 			SCANCODE_MODE = 257,    /**< I'm not sure if this is really not covered
 									*   by any of the above, but since there's a
