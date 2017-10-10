@@ -2,6 +2,7 @@
 #include <string>
 #include "GUIElement.h"
 #include "../Util/Rect.h"
+using namespace ENGINE::UTIL;
 namespace ENGINE {
 	namespace GUI {
 		class FontHandler;

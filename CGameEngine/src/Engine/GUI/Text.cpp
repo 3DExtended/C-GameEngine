@@ -1,6 +1,7 @@
 #include "Text.h"
 #include "FontHandler.h"
 using namespace ENGINE::GUI;
+using namespace ENGINE::UTIL;
 
 void Text::AppendText(std::string appendText)
 {

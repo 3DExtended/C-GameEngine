@@ -1,10 +1,24 @@
 #pragma once
-#include "ScopeWatch.h"
+#include "ScopeWatch.hpp"
 namespace ENGINE {
 	namespace UTIL {
+		/// <summary>
+		/// This class is a wrapper for using the scopewatch.
+		/// The essential idea is to have a macro (Bind(...)) which can be used to bind a child 
+		/// of this class and gets unbound automatically.
+		/// </summary>
 		class AutoUnbind {
 		public:
+			/// <summary>
+			/// The method used to bind this object. 
+			/// Has to be implemented!
+			/// </summary>
 			virtual void _bind() = 0;
+
+			/// <summary>
+			/// The method used to unbind this object. 
+			/// Has to be implemented!
+			/// </summary>
 			virtual void _unbind() = 0;
 		};
 	}

@@ -1,5 +1,5 @@
 #include "Rect.h"
-
+using namespace ENGINE::UTIL;
 void Rect::toPixels()
 {
 	if (this->inScreenCoords == false)

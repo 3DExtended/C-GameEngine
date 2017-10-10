@@ -2,52 +2,57 @@
 #include <glm/glm.hpp>
 #include "../Display.h"
 
-/// <summary>
-/// A rect providing info about a 2D-position and width and height 
-/// either in pixels or in screen location (-1 to 1 on the x- and y-axis) 
-/// </summary>
-class Rect {
-public:
-	/// <summary>
-	/// a new rect with every info = 0.0f 
-	/// </summary>
-	Rect() {};
-	~Rect() {};
+namespace ENGINE {
+	namespace UTIL {
 
-	/// <summary>
-	/// creates a new rect with given parameters 
-	/// </summary>
-	/// <param name="x">the x position</param>
-	/// <param name="y">the y position</param>
-	/// <param name="width">the width for the rect</param>
-	/// <param name="height">the height for the rect</param>
-	/// <param name="inScreenCoords">are the passed values in a coord system from -1 to 1</param>
-	Rect(float x, float y, float width, float height, bool inScreenCoords = false) {
-		this->x = x;
-		this->y = y;
-		this->width = width;
-		this->height = height;
-		this->inScreenCoords = inScreenCoords;
-	};
+		/// <summary>
+		/// A rect providing info about a 2D-position and width and height 
+		/// either in pixels or in screen location (-1 to 1 on the x- and y-axis) 
+		/// </summary>
+		class Rect {
+		public:
+			/// <summary>
+			/// a new rect with every info = 0.0f 
+			/// </summary>
+			Rect() {};
+			~Rect() {};
 
-	float x = 0.0f;
-	float y = 0.0f;
-	float width = 0.0f;
-	float height = 0.0f;
+			/// <summary>
+			/// creates a new rect with given parameters 
+			/// </summary>
+			/// <param name="x">the x position</param>
+			/// <param name="y">the y position</param>
+			/// <param name="width">the width for the rect</param>
+			/// <param name="height">the height for the rect</param>
+			/// <param name="inScreenCoords">are the passed values in a coord system from -1 to 1</param>
+			Rect(float x, float y, float width, float height, bool inScreenCoords = false) {
+				this->x = x;
+				this->y = y;
+				this->width = width;
+				this->height = height;
+				this->inScreenCoords = inScreenCoords;
+			};
 
-	/// <summary>
-	/// converts this rect from screencoords into pixel coords based on the current display dimensions 
-	/// </summary>
-	void toPixels();
+			float x = 0.0f;
+			float y = 0.0f;
+			float width = 0.0f;
+			float height = 0.0f;
 
-	/// <summary>
-	/// converts this rect from pixel coords into screen coords based on the current display dimensions 
-	/// </summary>
-	void fromPixels();
-	bool MouseInRect(glm::vec2 mousePos);
-	bool MouseInRect(int mouseX, int mouseY);
-private:
-	//is this rect in screen coords
-	bool inScreenCoords;
+			/// <summary>
+			/// converts this rect from screencoords into pixel coords based on the current display dimensions 
+			/// </summary>
+			void toPixels();
 
-};
+			/// <summary>
+			/// converts this rect from pixel coords into screen coords based on the current display dimensions 
+			/// </summary>
+			void fromPixels();
+			bool MouseInRect(glm::vec2 mousePos);
+			bool MouseInRect(int mouseX, int mouseY);
+		private:
+			//is this rect in screen coords
+			bool inScreenCoords;
+
+		};
+	}
+}

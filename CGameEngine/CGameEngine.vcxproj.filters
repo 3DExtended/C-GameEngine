@@ -110,9 +110,6 @@
     <ClInclude Include="src\Engine\Util\CmpStr.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="src\Engine\Util\ScopeWatch.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="src\Engine\Util\AutoUnbind.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -189,6 +186,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\Rect.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\ScopeWatch.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

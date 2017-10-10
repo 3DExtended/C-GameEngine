@@ -216,7 +216,7 @@
     <ClInclude Include="src\Engine\Util\lodepng.h" />
     <ClInclude Include="src\Engine\Util\Math.h" />
     <ClInclude Include="src\Engine\Util\Rect.h" />
-    <ClInclude Include="src\Engine\Util\ScopeWatch.h" />
+    <ClInclude Include="src\Engine\Util\ScopeWatch.hpp" />
     <ClInclude Include="src\Engine\Util\Util.h" />
   </ItemGroup>
   <ItemGroup>
