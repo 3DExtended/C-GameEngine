@@ -57,6 +57,23 @@ void buildTests() {
 		return 0;
 	}));
 	
+	Test("ENGINE::UTIL Util.h - splitString: Right vector size for a test string which can be split.", [] {
+		std::string testStr = "Hello World. This is a test string to test the splitString function.";
+		std::vector<std::string> parts = ENGINE::UTIL::splitString(testStr, ' ');
+		std::string arr[] = { "Hello", "World.", "This" , "is" , "a", "test","string","to", "test","the","splitString", "function." };
+		std::vector<std::string> expectedRes(arr,arr+12);
+
+		if (expectedRes.size() != parts.size())
+			return 1;
+
+		for (unsigned int i = 0; i < expectedRes.size() && i < parts.size(); i++) {
+			if (parts[i] != expectedRes[i]) {
+				return 2;
+			}
+		}
+
+		return 0;
+	}));
 }
 
 
