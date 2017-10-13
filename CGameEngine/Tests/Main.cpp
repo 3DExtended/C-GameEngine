@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include "Engine/Util/Math.h"
 
 using namespace ENGINE;
