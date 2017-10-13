@@ -33,9 +33,24 @@ namespace ENGINE {
 				this->inScreenCoords = inScreenCoords;
 			};
 
+			/// <summary>
+			/// The X value of this rect
+			/// </summary>
 			float x = 0.0f;
+
+			/// <summary>
+			/// the Y value of this rect
+			/// </summary>
 			float y = 0.0f;
+			
+			/// <summary>
+			/// The width of this rect
+			/// </summary>
 			float width = 0.0f;
+
+			/// <summary>
+			/// The height of this rect.
+			/// </summary>
 			float height = 0.0f;
 
 			/// <summary>
@@ -44,10 +59,25 @@ namespace ENGINE {
 			void toPixels();
 
 			/// <summary>
-			/// converts this rect from pixel coords into screen coords based on the current display dimensions 
+			/// Converts this rect from Pixel-Coordinats into Screen-Coordinats based on the current display dimensions 
 			/// </summary>
 			void fromPixels();
+
+			/// <summary>
+			/// Returns true if the specified mouse position is inside the rect.
+			/// </summary>
+			/// <remarks>Note that the mouse position has to be in the right coordinate system. (See toPixels() and fromPixels())</remarks>
+			/// <param name="mousePos">The mouse position</param>
+			/// <returns>True if the passed mouse position is inside the rect, else false.</returns>
 			bool MouseInRect(glm::vec2 mousePos);
+
+			/// <summary>
+			/// Returns true if the specified mouse position is inside the rect.
+			/// </summary>
+			/// <remarks>Note that the mouse position has to be in the right coordinate system. (See toPixels() and fromPixels())</remarks>
+			/// <param name="mouseX">The X-Coordinat of the mouse position</param>
+			/// <param name="mouseY">The Y-Coordinat of the mouse position</param>
+			/// <returns>True if the passed mouse position is inside the rect, else false.</returns>
 			bool MouseInRect(int mouseX, int mouseY);
 		private:
 			//is this rect in screen coords

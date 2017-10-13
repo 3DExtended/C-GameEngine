@@ -7,7 +7,9 @@ param (
 Try
 {
 	echo $wikiDir
-	cd "$wikiDir"
+	$dir = Resolve-Path $wikiDir
+	echo $dir
+	cd $dir
 	git add -A
 	git commit -m "Automated Wiki Updates"
 	git push
