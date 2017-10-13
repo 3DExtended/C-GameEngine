@@ -57,7 +57,7 @@ void buildTests() {
 		return 0;
 	}));
 	
-	Test("ENGINE::UTIL Util.h - splitString: Right vector size for a test string which can be split.", [] {
+	Test("ENGINE::UTIL Util.h - splitString: Right vector entries for a test string which can be split.", [] {
 		std::string testStr = "Hello World. This is a test string to test the splitString function.";
 		std::vector<std::string> parts = ENGINE::UTIL::splitString(testStr, ' ');
 		std::string arr[] = { "Hello", "World.", "This" , "is" , "a", "test","string","to", "test","the","splitString", "function." };
