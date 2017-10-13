@@ -6,7 +6,8 @@ param (
 
 Try
 {
-	cd $wikiDir
+	echo $wikiDir
+	cd "$wikiDir"
 	git add -A
 	git commit -m "Automated Wiki Updates"
 	git push
