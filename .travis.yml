@@ -29,4 +29,5 @@ script:
   - cd ../../ 
   - cmake .
   - cmake -G "Unix Makefiles"
-  - make
+  - make 
+  - make test
