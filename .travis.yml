@@ -30,3 +30,5 @@ script:
   - cmake .
   - cmake -G "Unix Makefiles"
   - make 
+  - cd Tests/
+  - ./tests
