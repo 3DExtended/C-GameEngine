@@ -12,7 +12,7 @@ using namespace ENGINE::UTIL;
 
 void buildTests() {
 
-	EngineTester::GetInstance()->RegisterTest(std::pair<std::string, std::function<int(void)>>("ENGINE::UTIL - Test the random Function", [] {
+	Test("ENGINE::UTIL - Test the random Function", [] {
 		for (int i = 0; i < 1000; i++) {
 			float rnd = ENGINE::UTIL::rand();
 			if (rnd < 0 || rnd >= 1) {
@@ -23,7 +23,7 @@ void buildTests() {
 		return 0;
 	}));
 
-	EngineTester::GetInstance()->RegisterTest(std::pair<std::string, std::function<int(void)>>("ENGINE::UTIL - Test the random Function", [] {
+	Test("ENGINE::UTIL - Test the random Function", [] {
 		for (int i = 0; i < 1000; i++) {
 			float rnd = ENGINE::UTIL::rand();
 			if (rnd < 0 || rnd >= 1) {

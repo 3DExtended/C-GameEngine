@@ -16,3 +16,4 @@ private:
 	static EngineTester * instance;
 };
 
+#define Test EngineTester::GetInstance()->RegisterTest(std::pair<std::string, std::function<int(void)>>
