@@ -30,4 +30,3 @@ script:
   - cmake .
   - cmake -G "Unix Makefiles"
   - make 
-  - make test

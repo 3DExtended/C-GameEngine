@@ -5,6 +5,3 @@ message(${CMAKE_CXX_FLAGS})
 
 add_executable (tests Main.cpp)
 target_link_libraries (tests LINK_PUBLIC engine)
-
-enable_testing()
-add_test( AllTests tests )
