@@ -12,7 +12,7 @@ namespace ENGINE {
 		class Rect {
 		public:
 			/// <summary>
-			/// a new rect with every info = 0.0f 
+			/// Creates a new Rect where every component (x, y, width, height) is initialized with 0. 
 			/// </summary>
 			Rect() {};
 			~Rect() {};
@@ -39,7 +39,7 @@ namespace ENGINE {
 			float height = 0.0f;
 
 			/// <summary>
-			/// converts this rect from screencoords into pixel coords based on the current display dimensions 
+			/// Converts this rect from Screen-Coordinats into Pixel-Coordinats based on the current display dimensions 
 			/// </summary>
 			void toPixels();
 
