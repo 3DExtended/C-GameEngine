@@ -10,7 +10,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Engine/Util/Curves)
 
 
 #add every cpp file to this line
-add_library(engine STATIC 
+add_library(engine 
 	Engine/Util/FileSystem.cpp 
 	Engine/Util/lodepng.cpp 
 	Engine/Util/Math.cpp 

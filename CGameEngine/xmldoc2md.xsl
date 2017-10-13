@@ -134,7 +134,7 @@ URL: http://github.com/jaime-olivares/xmldoc2md
   </xsl:template>
 
   <xsl:template match="code">
-    <xsl:text>&#10;```&#10;</xsl:text>
+    <xsl:text>&#10;```cpp&#10;</xsl:text>
     <xsl:value-of select="text()" />
     <xsl:text>```</xsl:text>
   </xsl:template>
