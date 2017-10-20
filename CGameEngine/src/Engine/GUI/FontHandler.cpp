@@ -240,8 +240,8 @@ void FontHandler::Render()
 	}
 
 	//bind shader and texture
-	Bind(shader);
-	Bind(texture);
+	AutoBind(shader);
+	AutoBind(texture);
 	glUniform1i(shader->getUniform("tex"), 0);
 
 	// bind the VAO (the triangle)

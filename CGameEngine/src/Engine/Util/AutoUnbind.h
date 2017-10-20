@@ -27,7 +27,7 @@ namespace ENGINE {
 #define CONCATENATE(x,y) CONCATENATE_DETAIL(x,y)
 #define MAKE_UNIQUE(x) CONCATENATE(x,__COUNTER__)
 
-#define Bind(obj)\
+#define AutoBind(obj)\
 	((ENGINE::UTIL::AutoUnbind*)((obj)))->_bind();\
 	ENGINE::UTIL::ScopeWatch<ENGINE::UTIL::AutoUnbind> MAKE_UNIQUE(unbindWatch)((obj), &ENGINE::UTIL::AutoUnbind::_unbind)
 	

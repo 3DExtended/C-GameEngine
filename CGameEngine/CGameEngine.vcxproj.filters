@@ -90,6 +90,9 @@
     <ClCompile Include="src\Engine\GUI\Text.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Util\Debug\DebugAction.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Display.h">
@@ -189,6 +192,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\Util\ScopeWatch.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\Util\Debug\DebugAction.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>

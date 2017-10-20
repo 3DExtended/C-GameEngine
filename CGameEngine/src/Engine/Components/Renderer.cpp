@@ -12,7 +12,7 @@ Renderer::Renderer(const std::string shaderName, Model * model):model(model)
 
 void Renderer::Render()
 {
-	Bind(shader);
+	AutoBind(shader);
 
 	//TODO bind uniforms
 	GLint matrix = shader->getUniform("matrix");

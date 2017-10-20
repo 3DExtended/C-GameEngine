@@ -3,6 +3,7 @@
 #include <glm/gtx/transform2.hpp>
 #include "Engine/Util/Math.h"
 #include "Engine/GUI/FontHandler.h"
+#include "Engine/Util/Debug/DebugAction.h"
 
 using namespace ENGINE::GUI;
 void MainScene::LoadShaders()
@@ -21,6 +22,7 @@ void MainScene::Start()
 float size = 1;
 void MainScene::Update()
 {
+	Action("Test");
 	size++;
 	if (size >= 500)
 		size = 400;
