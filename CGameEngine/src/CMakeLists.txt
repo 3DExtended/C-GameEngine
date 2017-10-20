@@ -19,6 +19,7 @@ add_library(engine
 	Engine/Util/Generators/CylinderGenerator.cpp
 	Engine/Util/Generators/IcosphereGenerator.cpp
 	Engine/Util/Generators/PerlinNoise.cpp
+	Engine/Util/Debug/DebugAction.cpp
 	Engine/Camera.cpp
 	Engine/Display.cpp
 	Engine/Engine.cpp
