@@ -1,4 +1,9 @@
 #include "DebugAction.h"
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <time.h>
+#endif
 using namespace ENGINE;
 using namespace ENGINE::UTIL;
 using namespace ENGINE::UTIL::DEBUG;
@@ -21,8 +26,14 @@ void ENGINE::UTIL::DEBUG::DebugAction::_unbind()
 	//TODO
 	TimeRepresentation temp;
 	temp = *tempTimeStamp - *boundTime;
+	eachTime.push_back(temp);
 
-	std::cout << "Secs: " << temp.secs << ", NanoSecs: " << temp.nsecs << std::endl;
+	if (eachTime.size() > NUMBEROFSTOREDTIMESTAMPS) {
+		eachTime.erase(eachTime.begin()); 
+		numberOfEvents--;
+	}
+
+	//std::cout << "Secs: " << temp.secs << ", NanoSecs: " << temp.nsecs << std::endl;
 
 	numberOfEvents++;
 }
@@ -33,7 +44,7 @@ DebugAction * ENGINE::UTIL::DEBUG::DebugAction::GetAction(std::string name)
 	if (sFrequency.QuadPart == 0)
 		QueryPerformanceFrequency(&sFrequency);
 #endif
-	DebugAction* action = nullptr;
+	DebugAction *action = nullptr;
 
 	std::map<std::string, DebugAction*>::iterator it = actions.find(name);
 
@@ -48,14 +59,23 @@ DebugAction * ENGINE::UTIL::DEBUG::DebugAction::GetAction(std::string name)
 	return action;
 }
 
-ENGINE::UTIL::DEBUG::DebugAction::DebugAction(std::string name)
+ENGINE::UTIL::DEBUG::DebugAction::DebugAction(std::string name):name(name)
 {
-	NUMBEROFSTOREDTIMESTAMPS
 }
 
 ENGINE::UTIL::DEBUG::DebugAction::~DebugAction()
 {
 	delete boundTime;
+}
+
+TimeRepresentation ENGINE::UTIL::DEBUG::DebugAction::GetAverage()
+{
+	TimeRepresentation average;
+	for (size_t i = 0; i < eachTime.size(); i++) {
+		average = average + eachTime[i];
+	}
+
+	return average/numberOfEvents;
 }
 
 void ENGINE::UTIL::DEBUG::DebugAction::DestroyAllActions()
