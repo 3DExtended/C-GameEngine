@@ -30,17 +30,42 @@ namespace ENGINE {
 		/// <returns>Model matrix (with parent transform)</returns>
 		glm::mat4 GetModelMatrix();
 
+		/// <summary>
+		/// This method returns a matrix that scales the object using this Transform 
+		/// </summary>
+		/// <returns>The scale matrix</returns>
 		glm::mat4 GetScaleMatrix();
 
+		/// <summary>
+		/// This method returns a matrix that rotates the object using this Transform 
+		/// </summary>
+		/// <returns>The rotation matrix</returns>
 		glm::mat4 GetRotationMatrix();
 
+		/// <summary>
+		/// This method returns a matrix that positions the object using this Transform 
+		/// </summary>
+		/// <returns>The position matrix</returns>
 		glm::mat4 GetPosMatrix();
 
+		/// <summary>
+		/// The position of the Transform and the corresponding GameObject 
+		/// </summary>
 		glm::vec3 position;
+
+		/// <summary>
+		/// The rotation of the Transform and the corresponding GameObject 
+		/// </summary>
 		glm::vec3 rotation;
+
+		/// <summary>
+		/// The scale value of the Transform and the corresponding GameObject 
+		/// </summary>
 		glm::vec3 scale;
 	private:
-		friend class GameObject;
+		friend class GameObject;	//Used so the GameObject can access the "gameObject" field which is used and needed for the parent calculation (in the model matrix method)
+		
+		//This field stores the gameObject for which this transform is used
 		GameObject* gameObject;
 	};
 }
