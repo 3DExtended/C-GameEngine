@@ -261,7 +261,7 @@ void FontHandler::AddQuadsForText(Text* txt) {
 
 	assert(characters[65] != 0);//this is a not valid font because there is no letter for 'A'
 
-	float scaler = float((double)txt->textHeightInPixel / (characters[65]->getsizeY() + 2 * characters[103]->getyOffset()));
+	float scaler = float((double)txt->textHeightInPixel / (characters[65]->GetsizeY() + 2 * characters[103]->GetyOffset()));
 
 	float virtualCursorInPixel = txt->rect->x;
 	Character *curChar;
@@ -284,66 +284,66 @@ void FontHandler::AddQuadsForText(Text* txt) {
 		//add coords for vertecies 
 		//oben links
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * curChar->getxOffset()));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->getyOffset() + scaler*curChar->getsizeY()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * curChar->GetxOffset()));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->GetyOffset() + scaler*curChar->GetsizeY()));
 			vertexData.push_back(zHeight);
 			//oben links
-			vertexData.push_back((curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back((curChar->getsizeY() + curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back((curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back((curChar->GetsizeY() + curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//unten links
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (float)curChar->getxOffset()));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler * (float)curChar->getyOffset()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (float)curChar->GetxOffset()));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler * (float)curChar->GetyOffset()));
 			vertexData.push_back(zHeight);
 			//unten links
-			vertexData.push_back(((float)curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back(((float)curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back(((float)curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back(((float)curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//unten rechts
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->getxOffset() + curChar->getsizeX())));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->getyOffset()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->GetxOffset() + curChar->GetsizeX())));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->GetyOffset()));
 			vertexData.push_back(zHeight);
 			//unten rechts
-			vertexData.push_back((curChar->getsizeX() + curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back((curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back((curChar->GetsizeX() + curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back((curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//oben links
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * curChar->getxOffset()));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->getyOffset() + scaler*curChar->getsizeY()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * curChar->GetxOffset()));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->GetyOffset() + scaler*curChar->GetsizeY()));
 			vertexData.push_back(zHeight);
 			//oben links
-			vertexData.push_back((curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back((curChar->getsizeY() + curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back((curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back((curChar->GetsizeY() + curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//oben rechts
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->getxOffset() + curChar->getsizeX())));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->getyOffset() + scaler*curChar->getsizeY()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->GetxOffset() + curChar->GetsizeX())));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->GetyOffset() + scaler*curChar->GetsizeY()));
 			vertexData.push_back(zHeight);
 			//oben rechts
-			vertexData.push_back((curChar->getsizeX() + curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back((curChar->getsizeY() + curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back((curChar->GetsizeX() + curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back((curChar->GetsizeY() + curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//unten rechts
 		{
-			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->getxOffset() + curChar->getsizeX())));
-			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->getyOffset()));
+			vertexData.push_back(getXOpenGL(virtualCursorInPixel + scaler * (curChar->GetxOffset() + curChar->GetsizeX())));
+			vertexData.push_back(getYOpenGL(txt->rect->y + scaler*curChar->GetyOffset()));
 			vertexData.push_back(zHeight);
 			//unten rechts
-			vertexData.push_back((curChar->getsizeX() + curChar->getxTextureCoord()) / globalTextureSizeX);
-			vertexData.push_back((curChar->getyTextureCoord()) / globalTextureSizeY);
+			vertexData.push_back((curChar->GetsizeX() + curChar->GetxTextureCoord()) / globalTextureSizeX);
+			vertexData.push_back((curChar->GetyTextureCoord()) / globalTextureSizeY);
 		}
 
 		//update cursor
-		virtualCursorInPixel += scaler * curChar->getxAdvance();
+		virtualCursorInPixel += scaler * curChar->GetxAdvance();
 
 		txt->rect->toPixels();
 		if (virtualCursorInPixel >= txt->rect->x + txt->rect->width)
