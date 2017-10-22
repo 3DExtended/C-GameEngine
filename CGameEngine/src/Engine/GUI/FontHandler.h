@@ -171,12 +171,10 @@ namespace ENGINE {
 			// A list containing all the font handlers that have been created (so that we can render them with one call to this class)
 			static std::vector<FontHandler*> fonts;
 
-			/// <summary>
-			/// The private constructor of this class.
-			/// The resulting instance symilizes a font-shader combination which can be used to create text handlers which than can be rendered. 
-			/// </summary>
-			/// <param name="pathToFontFile">The path to the folder with an appended "/<name>" that contains a .fnt and a .png file with the "<name>" as name.</param>
-			/// <param name="shaderPath">A path to the shader you want to use</param>
+			// The private constructor of this class.
+			// The resulting instance symilizes a font-shader combination which can be used to create text handlers which than can be rendered. 
+			// <param name="pathToFontFile">The path to the folder with an appended "/<name>" that contains a .fnt and a .png file with the "<name>" as name.</param>
+			// <param name="shaderPath">A path to the shader you want to use</param>
 			FontHandler(const std::string pathToFontFile, const std::string shaderPath);
 			
 			// Inserts a text instance into the texts vector (which is sorted by the depth values)
