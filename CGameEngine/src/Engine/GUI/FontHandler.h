@@ -95,49 +95,49 @@ namespace ENGINE {
 				/// Getter for the ID attribute 
 				/// </summary>
 				/// <returns>The ID</returns>
-				int getID() { return id; }
+				int GetID() { return id; }
 
 				/// <summary>
 				/// Getter for the xTextureCoord attribute 
 				/// </summary>
 				/// <returns>The xTextureCoord</returns>
-				float getxTextureCoord() { return xTextureCoord; }
+				float GetxTextureCoord() { return xTextureCoord; }
 
 				/// <summary>
 				/// Getter for the yTextureCoord attribute 
 				/// </summary>
 				/// <returns>The yTextureCoord</returns>
-				float getyTextureCoord() { return yTextureCoord; }
+				float GetyTextureCoord() { return yTextureCoord; }
 				
 				/// <summary>
 				/// Getter for the xOffset attribute 
 				/// </summary>
 				/// <returns>The xOffset</returns>
-				float getxOffset() { return xOffset; }
+				float GetxOffset() { return xOffset; }
 
 				/// <summary>
 				/// Getter for the yOffset attribute 
 				/// </summary>
 				/// <returns>The yOffset</returns>
-				float getyOffset() { return yOffset; }
+				float GetyOffset() { return yOffset; }
 
 				/// <summary>
 				/// Getter for the sizeX attribute 
 				/// </summary>
 				/// <returns>The sizeX</returns>
-				float getsizeX() { return sizeX; }
+				float GetsizeX() { return sizeX; }
 
 				/// <summary>
 				/// Getter for the sizeY attribute 
 				/// </summary>
 				/// <returns>The sizeY</returns>
-				float getsizeY() { return sizeY; }
+				float GetsizeY() { return sizeY; }
 
 				/// <summary>
 				/// Getter for the xAdvance attribute 
 				/// </summary>
 				/// <returns>The xAdvance</returns>
-				float getxAdvance() { return xAdvance; }
+				float GetxAdvance() { return xAdvance; }
 
 
 			private:
