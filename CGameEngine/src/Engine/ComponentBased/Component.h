@@ -48,7 +48,7 @@ namespace ENGINE {
 		/// Creates a new gameObject with a specified name. 
 		/// This GameObject is introduced to the current scene.
 		/// </summary>
-		/// <param name="name" type="std::string">The name for the new GameObject</param>
+		/// <param name="name" >The name for the new GameObject</param>
 		/// <returns>A pointer to the empty gameObject with the name.</returns>
 		GameObject * Instantiate(std::string name);
 
