@@ -19,12 +19,39 @@ URL: http://github.com/jaime-olivares/xmldoc2md
     <xsl:apply-templates select="//member[contains(@name,'T:')]"/>
   </xsl:template>
 
+  <!-- replace template since we are using xsl 1.0 syntax -->
+  <xsl:template name="replace-string">
+    <xsl:param name="text"/>
+    <xsl:param name="replace"/>
+    <xsl:param name="with"/>
+    <xsl:choose>
+      <xsl:when test="contains($text,$replace)">
+        <xsl:value-of select="substring-before($text,$replace)"/>
+        <xsl:value-of select="$with"/>
+        <xsl:call-template name="replace-string">
+          <xsl:with-param name="text"
+select="substring-after($text,$replace)"/>
+          <xsl:with-param name="replace" select="$replace"/>
+          <xsl:with-param name="with" select="$with"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <!-- Type template -->
   <xsl:template match="//member[contains(@name,'T:')]">
     
     <xsl:variable name="FullMemberName" select="substring-after(@name, ':')"/>
     <xsl:variable name="MemberName">
       <xsl:choose>
+        <xsl:when test="contains(@name, '(std.basic_string')">
+          <xsl:value-of select="
+            concat(substring-before(substring-after(@name,'.'),'(std.basic_string'),'std::string)')"/>
+          <xsl:message>Found a std::string</xsl:message>
+        </xsl:when>
         <xsl:when test="contains(@name, '.')">
           <xsl:value-of select="substring-after(@name, '.')"/>
         </xsl:when>
@@ -81,7 +108,31 @@ URL: http://github.com/jaime-olivares/xmldoc2md
           </xsl:when>
           <xsl:otherwise>
             <xsl:text>&#10;&#10;#### </xsl:text>
-            <xsl:value-of select="substring-after(@name, concat('M:',$FullMemberName,'.'))"/>
+            <!-- We have to delete this shitty std::String thing... -->
+            
+
+            <xsl:variable name="functionFieldWithParameter" select="substring-after(@name, concat('M:',$FullMemberName,'.'))"/>
+            <xsl:message>
+              <xsl:value-of select="$functionFieldWithParameter"/>
+            </xsl:message>
+
+
+            <xsl:choose>
+              <xsl:when test="contains($functionFieldWithParameter, 'std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;')">
+
+
+                <xsl:call-template name="replace-string">
+                  <xsl:with-param name="text" select="$functionFieldWithParameter"/>
+                  <xsl:with-param name="replace" select="'std.basic_string&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte,std.char_traits{System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte},std.allocator&lt;System.SByte!System.Runtime.CompilerServices.IsSignUnspecifiedByte&gt;&gt;'" />
+                  <xsl:with-param name="with" select="'std::string'"/>
+                </xsl:call-template>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="$functionFieldWithParameter"/>
+              </xsl:otherwise>
+            </xsl:choose>
+
+
           </xsl:otherwise>
         </xsl:choose>
 
@@ -152,7 +203,10 @@ URL: http://github.com/jaime-olivares/xmldoc2md
   </xsl:template>
 
   <xsl:template match="param">
-    <xsl:text>&#10;&gt; **</xsl:text><xsl:value-of select="@name"/>:** <xsl:value-of select="normalize-space()" /><xsl:text>&#10;</xsl:text>
+    <xsl:text>&#10;&gt; **</xsl:text>
+    <xsl:value-of select="@name"/>:** 
+    <xsl:value-of select="normalize-space()" />
+    <xsl:text>&#10;</xsl:text>
   </xsl:template>
 
   <xsl:template match="paramref">
